@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/twentytwenty/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-star-rating/css" />
+      <path value="$PROJECT_DIR$/vendor/twentytwenty/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-star-rating/themes" />
+      <path value="$PROJECT_DIR$/vendor/owl.carousel/assets" />
+      <path value="$PROJECT_DIR$/vendor/simple-line-icons/fonts" />
+      <path value="$PROJECT_DIR$/vendor/nivo-slider/themes" />
+      <path value="$PROJECT_DIR$/vendor/linea-icons/linea-basic" />
+      <path value="$PROJECT_DIR$/vendor/linea-icons/linea-music" />
+      <path value="$PROJECT_DIR$/vendor/simple-line-icons/css" />
+      <path value="$PROJECT_DIR$/vendor/rs-plugin/css" />
+      <path value="$PROJECT_DIR$/vendor/rs-plugin/assets" />
+      <path value="$PROJECT_DIR$/vendor/rs-plugin/fonts" />
+      <path value="$PROJECT_DIR$/vendor/rs-plugin/revolution-addons" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/webfonts" />
+      <path value="$PROJECT_DIR$/vendor/rs-plugin/js" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/css" />
+      <path value="$PROJECT_DIR$/vendor/popper/umd" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-star-rating/img" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-star-rating/js" />
+      <path value="$PROJECT_DIR$/vendor/circle-flip-slideshow/js" />
+      <path value="$PROJECT_DIR$/vendor/circle-flip-slideshow/css" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-datepicker/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-datepicker/css" />
+    </include_path>
+  </component>
+</project>
