@@ -1,76 +1,72 @@
 <?php
 $errorMsg=''; $successMsg=''; $infoMsg=''; $runJs='';
 
-if($do=='haqqimizda'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='haqqimizda' "));
-	$siteTitle=$info_menu["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+if($do=='bloq'){
+    $type = safe($_GET['type']);
+
+    if(in_array($type,$blogArr)) {
+        $typeIndex = array_search ($type, $blogArr);
+        $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$type' "));
+        $siteTitle=$info_menu["name_".$lang_name];
+        $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
+        $siteKeywords=$info_description["keywords_".$lang_name];
+        $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+
+        if($info_menu['parent_id']>0) {
+            $parentExistId = $info_menu['parent_id'];
+        }
+    } else {
+        header('Location: '.$site);
+        die();
+    }
 }
-elseif($do=='kalite'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='kalite' "));
-	$siteTitle=$info_menu["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='haberler'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='haberler' "));
-	$siteTitle=$info_menu["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='haber'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='haberler' "));
+elseif($do=='xeber'){
 	$id=intval($_GET["id"]);
 	$info_data=mysqli_fetch_assoc(mysqli_query($db,"select * from news where id='$id' "));
 	if(mysqli_num_rows(mysqli_query($db,"select id from news where id='$id' "))==0) {header("Location: $site"); exit();}
-	$siteTitle=$info_data["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_data["full_text_".$lang_name],true,true),0,250);
+	$siteTitle=decode_text($info_data["name"],true,true);
+	$siteDescription=substr_(decode_text($info_data["full_text".$lang_name],true,true),0,250);
 	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/news/'.$info_data["image"];
+	$siteImage=SITE_PATH.'/images/'.$info_data['image_medium'];
+
+	if($info_data['type'] == 2) {
+	    $link = 'kampaniyalar';
+    } elseif($info_data['type'] == 3) {
+	    $link = 'populyar-meqaleler';
+    } else {
+	    $link = 'xeberler';
+    }
+
+    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$link' "));
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
-elseif($do=='markalarimiz'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='markalarimiz' "));
+elseif($do=='sections'){
+	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='bolmeler' "));
 	$siteTitle=$info_menu["name_".$lang_name];
 	$siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
 	$siteKeywords=$info_description["keywords_".$lang_name];
 	$siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
-elseif($do=='marka'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='markalarimiz' "));
-	
-	$id=intval($_GET["id"]);
-	$info_data=mysqli_fetch_assoc(mysqli_query($db,"select * from products where id='$id' "));
-	if(mysqli_num_rows(mysqli_query($db,"select id from products where id='$id' "))==0) {header("Location: $site"); exit();}
-	$siteTitle=$info_data["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_data["full_text_".$lang_name],true,true),0,250);
-	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/products/'.$info_data["image"];
-	
-	$info_cat=mysqli_fetch_assoc(mysqli_query($db,"select * from categories where id='$info_data[category_id]' "));
-}
-elseif($do=='fason-uretim'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='fason-uretim' "));
-	$siteTitle=$info_menu["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='uretim'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='markalarimiz' "));
-	
-	$id=intval($_GET["id"]);
-	$info_data=mysqli_fetch_assoc(mysqli_query($db,"select * from products2 where id='$id' "));
-	if(mysqli_num_rows(mysqli_query($db,"select id from products2 where id='$id' "))==0) {header("Location: $site"); exit();}
-	$siteTitle=$info_data["name_".$lang_name];
-	$siteDescription=substr_(decode_text($info_data["full_text_".$lang_name],true,true),0,250);
-	$siteKeywords=$info_description["keywords_".$lang_name];
-	$siteImage=SITE_PATH.'/images/products2/'.$info_data["image"];
-	
-	$info_cat=mysqli_fetch_assoc(mysqli_query($db,"select * from categories2 where id='$info_data[category_id]' "));
+elseif($do=='section'){
+    $id=intval($_GET["id"]);
+    $info_data=mysqli_fetch_assoc(mysqli_query($db,"select * from sections where id='$id' AND active=1 "));
+    if(mysqli_num_rows(mysqli_query($db,"select id from sections where id='$id' AND active=1 "))==0) {header("Location: $site"); exit();}
+    $siteTitle=decode_text($info_data["name_".$lang_name],true,true);
+    $siteDescription=substr_(decode_text($info_data["text_".$lang_name],true,true),0,250);
+    $siteKeywords=$info_description["keywords_".$lang_name];
+
+    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='bolmeler' "));
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
 elseif($do=='pages'){
 	$menu_id=intval($_GET["menu_id"]);
@@ -81,13 +77,21 @@ elseif($do=='pages'){
 	$siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
 	$siteKeywords=$info_description["keywords_".$lang_name];
 	$siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
-elseif($do=='iletishim'){
-	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='iletishim' "));
+elseif($do=='elaqe'){
+	$info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='elaqe' "));
 	$siteTitle=$info_menu["name_".$lang_name];
 	$siteDescription=$info_description["description_".$lang_name];
 	$siteKeywords=$info_description["keywords_".$lang_name];
 	$siteImage=SITE_PATH.'/assets/img/logo-rentit.png';
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
 elseif($do=='albom'){
     $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='albom'"));
@@ -95,6 +99,10 @@ elseif($do=='albom'){
     $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
     $siteKeywords=$info_description["keywords_".$lang_name];
     $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
 elseif($do=='fotoqalereya'){
     $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='albom' "));
@@ -106,14 +114,10 @@ elseif($do=='fotoqalereya'){
     $siteDescription=substr_(decode_text($info_data["text_".$lang_name],true,true),0,250);
     $siteKeywords=$info_description["keywords_".$lang_name];
     $siteImage=SITE_PATH.'/images/photo_albums/'.$info_data["image"];
-}
-elseif($do=='videoqalereya'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='videoqalereya' "));
 
-    $siteTitle=$info_menu["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
 elseif($do=='service'){
     $id=intval($_GET["id"]);
@@ -125,6 +129,10 @@ elseif($do=='service'){
     $siteDescription=substr_(decode_text($info_service["full_text_".$lang_name],true,true),0,250);
     $siteKeywords=$info_description["keywords_".$lang_name];
     $siteImage=SITE_PATH.'/images/services/'.$info_service["image"];
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
 elseif($do=='services'){
     $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='xidmetler'"));
@@ -132,68 +140,17 @@ elseif($do=='services'){
     $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
     $siteKeywords=$info_description["keywords_".$lang_name];
     $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='methods'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='metodlar'"));
-    $siteTitle=$info_menu["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='comments'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='reyler'"));
-    $siteTitle=$info_menu["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='method'){
-    $id=intval($_GET["id"]);
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='metodlar' and active=1 "));
-    $info_method=mysqli_fetch_assoc(mysqli_query($db,"select * from methods where id='$id' and active=1 "));
-    if(intval($info_menu["id"])==0 || intval($info_method['id'])==0) {header("Location: $site"); exit();}
 
-    $siteTitle=$info_menu["name_".$lang_name]." - ".$info_method["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_method["full_text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/methods/'.$info_method["image"];
-}
-elseif($do=='contact'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='elaqe'"));
-    $siteTitle=$info_menu["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='appointment'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from appointment "));
-    $siteTitle=$info_menu["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_menu["full_text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='bloq'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='bloq'"));
-    $siteTitle=$info_menu["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
-}
-elseif($do=='xeber'){
-    $id=intval($_GET["id"]);
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='bloq' and active=1 "));
-    $info_news=mysqli_fetch_assoc(mysqli_query($db,"select * from news where id='$id' and active=1 "));
-    if(intval($info_menu["id"])==0 || intval($info_news['id'])==0) {header("Location: $site"); exit();}
-
-    $siteTitle=$info_menu["name_".$lang_name]." - ".$info_news["name_".$lang_name];
-    $siteDescription=substr_(decode_text($info_news["short_text_".$lang_name],true,true),0,250);
-    $siteKeywords=$info_description["keywords_".$lang_name];
-    $siteImage=SITE_PATH.'/images/news/'.$info_news["image"];
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
 }
 else{
 	$siteTitle=$info_description["title_".$lang_name];
 	$siteDescription=$info_description["description_".$lang_name];
 	$siteKeywords=$info_description["keywords_".$lang_name];
 	$siteImage=SITE_PATH.'/assets/img/logo/logo_new.png';
+
+    $parentExistId = 0;
 }
 ?>

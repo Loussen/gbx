@@ -1253,6 +1253,7 @@ function check_csrf_($csrf_,$name=''){
 	else return false;
 }
 function slugGenerator($slug,$space='-',$onlyEnglish=true,$lang_name='az'){
+	$slug = mb_strtolower($slug,"UTF-8");
 	if($onlyEnglish==true){
 		$from=array('ü','ö','ğ','ı','ə','ç','ş'); $to=array('u','o','g','i','e','c','s');
 		$slug=str_replace($from,$to,$slug);

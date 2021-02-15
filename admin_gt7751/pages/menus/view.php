@@ -88,6 +88,7 @@ $page_title="Menyular";
 						$query=str_replace("select id ","select * ",$query_count);
 						$query.=" $orderBy limit $start,$limit";
 						$sql=mysqli_query($db,$query);
+
 						while($row=mysqli_fetch_assoc($sql))
 						{
 							$parent_menu=mysqli_fetch_assoc(mysqli_query($db,"select $Name from $do where id='$row[parent_id]' "));

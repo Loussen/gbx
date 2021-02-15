@@ -1,54 +1,28 @@
-<!-- hero-area start -->
-<section class="breadcrumb-bg pt-200 pb-180" data-background="<?=SITE_PATH?>/images/menus/<?=$info_menu['image']?>">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-md-5">
-                <div class="page-title">
-                    <h1><?=$info_menu['name_'.$lang_name]?></h1>
+<div class="wrapper-1">
+    <div class="row">
+        <div class="col-sm-8 col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-heading">
+                        <h3><?=$info_menu['name_'.$lang_name]?></h3>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-md-7 d-flex justify-content-start justify-content-md-end align-items-center">
-                <div class="page-breadcumb">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb ">
-                            <li class="breadcrumb-item">
-                                <a href="<?=$site.'/'.$info_home_menu['link']?>"><?=$info_home_menu['name_'.$lang_name]?></a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="<?=$site.'/'.$info_menu['link']?>"><?=$info_menu['name_'.$lang_name]?></a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page"><?=$info_news['name_'.$lang_name]?></li>
-                        </ol>
-                    </nav>
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="img-responsive img-thumbnail ifw mb-15" src="<?=SITE_PATH?>/images/<?=$info_data['image']?>">
+                    <h5 class="b-heading"><?=decode_text($info_data['name'],true)?></h5>
+                    <span class="b-date"><i aria-hidden="true" class="fa fa-calendar"></i> <?=date("d.m.Y", $info_data['datetime'])?></span>
+                    <span class="b-views"><i aria-hidden="true" class="fa fa-eye"></i> <?=$info_data['read_count']?></span>
+                    <?=decode_text($info_data['full_text'],true)?>
+
                 </div>
             </div>
+
+
         </div>
+        <?php require_once "includes/right.php"; ?>
     </div>
-</section>
-<!-- hero-area end -->
-<!-- about-area start -->
-<section class="about-area pb-90 mt-30 pt-30">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-4 mb-30">
-                <div class="about-left-side pos-rel">
-                    <div class="about-front-img pos-rel">
-                        <img src="<?=SITE_PATH?>/images/news/<?=$info_news['image']?>" alt="<?=$info_news['name_'.$lang_name]?>">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-8">
-                <div class="about-right-side">
-                    <div class="about-title">
-                        <h5><?=$info_menu['name_'.$lang_name]?></h5>
-                        <h2><?=$info_news['name_'.$lang_name]?></h2>
-                    </div>
-                    <div class="about-text content-text">
-                        <p><?=decode_text($info_news['full_text_'.$lang_name],true)?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- about-area end -->
+</div>

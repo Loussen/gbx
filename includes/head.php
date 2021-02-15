@@ -9,14 +9,15 @@
 <meta name="og:image" content="<?=$siteImage?>"/>
 <meta content="Fuad Hasanli | fhesenli92@gmail.com" name="author">
 <title><?=$siteTitle?> - Dr. Ramazan Nəsirli</title>
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="fonts/fonts.css" rel="stylesheet">
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/sidenav.css" rel="stylesheet">
-<link href="css/animate.css" rel="stylesheet">
-<link href="css/bootstrap-select.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet"><!--[if lt IE 9]>
+
+<link href="<?=SITE_PATH?>/assets/css/bootstrap.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/fonts/fonts.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/css/hover.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/css/sidenav.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/css/animate.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/css/bootstrap-select.css" rel="stylesheet">
+<link href="<?=SITE_PATH?>/assets/css/style.css" rel="stylesheet"><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
