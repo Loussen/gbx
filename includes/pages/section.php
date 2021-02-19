@@ -105,7 +105,7 @@
                     while ($row_consultant = mysqli_fetch_assoc($sql_consultant)) {
                         ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 no-td">
-                            <a href="<?= $site ?>/doctor/<?= slugGenerator($row_consultant['name']) . '-' . $row_consultant["id"] ?>">
+                            <a href="<?= $site ?>/hekim/<?= slugGenerator($row_consultant['name']) . '-' . $row_consultant["id"] ?>">
                                 <div class="doc-list-unit">
                                     <img class="img-responsive mb-15"
                                          src="<?= SITE_PATH ?>/images/doctors/<?= $row_consultant['image'] ?>">
@@ -151,7 +151,7 @@
                     while ($row_doctors = mysqli_fetch_assoc($sql_doctors)) {
                         ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 no-td">
-                            <a href="<?= $site ?>/doctor/<?= slugGenerator($row_doctors['name']) . '-' . $row_doctors["id"] ?>">
+                            <a href="<?= $site ?>/hekim/<?= slugGenerator($row_doctors['name']) . '-' . $row_doctors["id"] ?>">
                                 <div class="doc-list-unit">
                                     <img class="img-responsive mb-15"
                                          src="<?= SITE_PATH ?>/images/doctors/<?= $row_doctors['image'] ?>">

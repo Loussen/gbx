@@ -21,6 +21,7 @@ $info_contacts = mysqli_fetch_assoc(mysqli_query($db, "select * from contacts"))
 $info_description = mysqli_fetch_assoc(mysqli_query($db, "select * from description"));
 
 $blogArr = [1 => 'xeberler', 2 => 'kampaniyalar', 3 => 'populyar-meqaleler'];
+$doctorArr = [1 => 'all', 2 => 'bolme-uzre', 3 => 'ixtisas-uzre', 4 => 'qonaq-hekimler'];
 
 $Name = 'name_' . $lang_name;
 require_once "includes/controller.php";
@@ -41,14 +42,15 @@ require_once "includes/controller.php";
         <div class="header">
             <div class="top-head">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <div class="logo">
-                            <img src="<?= SITE_PATH ?>/assets/img/logos/logo-web.png">
+                            <img src="<?= SITE_PATH ?>/assets/img/logos/logo-web.svg">
+                            <img width="90" src="<?= SITE_PATH ?>/assets/img/jci.png">
                         </div>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <div class="row pdtb">
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                                 <div id="custom-search-input">
                                     <div class="input-group col-md-12">
                                         <input class="form-control" placeholder="Həkim, xidmət, xəstəlik, check-up..."
@@ -63,7 +65,8 @@ require_once "includes/controller.php";
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <img width="90" src="<?= SITE_PATH ?>/assets/img/alo1_2.svg">
                                 <ul class="phone-main">
                                     <li>+994 22 255 38 38</li>
                                     <li>+994 22 255 83 83</li>

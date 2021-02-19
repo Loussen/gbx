@@ -95,7 +95,7 @@ $(document).ready(function () {
         interval: 5000
     });
 
-    $("img").addClass("img-responsive");
+    $("div.wrapper-1 img").addClass("img-responsive");
 });
 
 $(document).ready(function () {
@@ -109,7 +109,19 @@ $(document).ready(function () {
 
     function search_section(current) {
         let value = $(current).val().toLowerCase();
-        $("ul.units-list li a").filter(function () {
+        $("div.item-unit").filter(function () {
+            // $(this).find('ul.units-list li').hide();
+            // $(this).find($('ul.units-list li').text().toLowerCase().indexOf(value) > -1).show();
+            // $("div.unit-box").each(function() {
+            //     if($(this).text().toLowerCase().indexOf(value) == -1)
+            //     {
+            //         $(this).hide();
+            //     }
+            //     else
+            //     {
+            //         $(this).show();
+            //     }
+            // });
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     }

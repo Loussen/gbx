@@ -1,7 +1,7 @@
 <?php
 $errorMsg=''; $successMsg=''; $infoMsg=''; $runJs='';
 
-if($do=='bloq'){
+if($do=='blog'){
     $type = safe($_GET['type']);
 
     if(in_array($type,$blogArr)) {
@@ -20,7 +20,7 @@ if($do=='bloq'){
         die();
     }
 }
-elseif($do=='xeber'){
+elseif($do=='news'){
 	$id=intval($_GET["id"]);
 	$info_data=mysqli_fetch_assoc(mysqli_query($db,"select * from news where id='$id' "));
 	if(mysqli_num_rows(mysqli_query($db,"select id from news where id='$id' "))==0) {header("Location: $site"); exit();}
@@ -93,8 +93,8 @@ elseif($do=='elaqe'){
         $parentExistId = $info_menu['parent_id'];
     }
 }
-elseif($do=='albom'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='albom'"));
+elseif($do=='albums'){
+    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='albomlar'"));
     $siteTitle=$info_menu["name_".$lang_name];
     $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
     $siteKeywords=$info_description["keywords_".$lang_name];
@@ -104,13 +104,13 @@ elseif($do=='albom'){
         $parentExistId = $info_menu['parent_id'];
     }
 }
-elseif($do=='fotoqalereya'){
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='albom' "));
+elseif($do=='photogallery'){
+    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='albomlar' "));
 
     $id=intval($_GET["id"]);
     $info_data=mysqli_fetch_assoc(mysqli_query($db,"select * from photo_albums where id='$id' "));
     if(mysqli_num_rows(mysqli_query($db,"select id from photo_albums where id='$id' "))==0) {header("Location: $site"); exit();}
-    $siteTitle=$info_data["name_".$lang_name];
+    $siteTitle=$info_menu['name_'.$lang_name]." - ".$info_data["name_".$lang_name];
     $siteDescription=substr_(decode_text($info_data["text_".$lang_name],true,true),0,250);
     $siteKeywords=$info_description["keywords_".$lang_name];
     $siteImage=SITE_PATH.'/images/photo_albums/'.$info_data["image"];
@@ -143,6 +143,73 @@ elseif($do=='services'){
 
     if($info_menu['parent_id']>0) {
         $parentExistId = $info_menu['parent_id'];
+    }
+}
+elseif($do=='doctor'){
+    $id=intval($_GET["id"]);
+    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='hekimlerimiz/all' and active=1 "));
+    $info_doctor=mysqli_fetch_assoc(mysqli_query($db,"select * from doctors where id='$id' and active=1 "));
+    if(intval($info_menu["id"])==0 || intval($info_doctor['id'])==0) {header("Location: $site"); exit();}
+
+    $siteTitle=$info_menu["name_".$lang_name]." - ".$info_doctor["name_".$lang_name];
+    $siteDescription=$info_doctor["name_".$lang_name];
+    $siteKeywords=$info_description["keywords_".$lang_name];
+    $siteImage=SITE_PATH.'/images/doctors/'.$info_doctor["image"];
+
+    if($info_menu['parent_id']>0) {
+        $parentExistId = $info_menu['parent_id'];
+    }
+}
+elseif($do=='doctors')
+{
+    $type = safe($_GET['type']);
+
+    if(in_array($type,$doctorArr)) {
+        $doctorTypeIndex = array_search ($type, $doctorArr);
+
+        switch ($doctorTypeIndex)
+        {
+            case 2:
+                $title='Həkimlər (Bölmə üzrə)';
+                $placeholder='Tibbi bölmənin adı...';
+                $column="s.name_".$lang_name;
+                $column1=$column;
+                $doctor_status="0";
+                break;
+            case 3:
+                $title='Həkimlər (İxtisas üzrə)';
+                $placeholder='Həkim ixtisası...';
+                $column="p.name_".$lang_name;
+                $column1=$column;
+                $doctor_status="0";
+                break;
+            case 4:
+                $title='Qonaq Həkimlər';
+                $placeholder='Həkim adı və ya soyadı...';
+                $column="d.name_".$lang_name;
+                $column1="left(".$column.",1)";
+                $doctor_status="1";
+                break;
+            default:
+                $title='Həkimlərimiz';
+                $placeholder='Həkim adı və ya soyadı...';
+                $column="d.name_".$lang_name;
+                $column1="left(".$column.",1)";
+                $doctor_status="0";
+        }
+
+        $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='hekimlerimiz/$type' and active=1 "));
+        $siteTitle=$info_menu["name_".$lang_name];
+        $siteDescription=substr_(decode_text($info_menu["text_".$lang_name],true,true),0,250);
+        $siteKeywords=$info_description["keywords_".$lang_name];
+        $siteImage=SITE_PATH.'/images/menus/'.$info_menu["image"];
+
+        if($info_menu['parent_id']>0) {
+            $parentExistId = $info_menu['parent_id'];
+        }
+    } else {
+        header('Location: '.$site);
+        die();
     }
 }
 else{
