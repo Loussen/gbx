@@ -27,7 +27,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="photo-box">
                             <a href="<?=$site?>/fotoqalereya/<?=slugGenerator($row_albums['name']).'-'.$row_albums["id"]?>">
-                                <img src="<?=SITE_PATH?>/images/<?=$row_albums['image']?>" class="img-responsive img-thumbnail">
+                                <img src="<?=SITE_PATH?>/images/photo_albums/<?=$row_albums['image']?>" class="img-responsive img-thumbnail">
                             </a>
                             <h5><?=$row_albums['name']?></h5>
                         </div>

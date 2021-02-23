@@ -1,105 +1,106 @@
 <div class="patient-serv hidden-sm hidden-xs">
-    <div class="container">
-        <div class="sitemap">
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="box-main">
-                        <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/pgallery/b1.jpg"></div>
-                        <h3>Xəstəxana</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
-                        <ul>
-                            <li>
-                                <a href="">Haqqımızda</a>
-                            </li>
-                            <li>
-                                <a href="">Foto qalereya</a>
-                            </li>
-                            <li>
-                                <a href="">Video qalereya</a>
-                            </li>
-                        </ul>
-                    </div>
+
+</div>
+<div class="container">
+    <div class="sitemap">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="box-main">
+                    <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/pgallery/b1.jpg"></div>
+                    <h3>Xəstəxana</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
+                    <ul>
+                        <li>
+                            <a href="">Haqqımızda</a>
+                        </li>
+                        <li>
+                            <a href="">Foto qalereya</a>
+                        </li>
+                        <li>
+                            <a href="">Video qalereya</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="box-main">
-                        <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/pgallery/b4.jpg"></div>
-                        <h3>Bölmələr</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
-                        <ul>
-                            <li>
-                                <a href="">Bölmələr</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="box-main">
+                    <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/pgallery/b4.jpg"></div>
+                    <h3>Bölmələr</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
+                    <ul>
+                        <li>
+                            <a href="">Bölmələr</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="box-main">
-                        <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/3.jpg"></div>
-                        <h3>Həkimlər</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
-                        <ul>
-                            <li>
-                                <a href="">A-Z</a>
-                            </li>
-                            <li>
-                                <a href="">Bölmə üzrə</a>
-                            </li>
-                            <li>
-                                <a href="">İxtisas üzrə</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="box-main">
+                    <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/3.jpg"></div>
+                    <h3>Həkimlər</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
+                    <ul>
+                        <li>
+                            <a href="">A-Z</a>
+                        </li>
+                        <li>
+                            <a href="">Bölmə üzrə</a>
+                        </li>
+                        <li>
+                            <a href="">İxtisas üzrə</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="box-main">
-                        <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/4.jpg"></div>
-                        <h3>Check-Up</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
-                        <ul>
-                            <li>
-                                <a href="">Ümumi</a>
-                            </li>
-                            <li>
-                                <a href="">Kişi üçün</a>
-                            </li>
-                            <li>
-                                <a href="">Qadın üçün</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="box-main">
+                    <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/4.jpg"></div>
+                    <h3>Check-Up</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
+                    <ul>
+                        <li>
+                            <a href="">Ümumi</a>
+                        </li>
+                        <li>
+                            <a href="">Kişi üçün</a>
+                        </li>
+                        <li>
+                            <a href="">Qadın üçün</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="box-main">
-                        <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/5.jpg"></div>
-                        <h3>e-Xidmətlər</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
-                        <ul>
-                            <li>
-                                <a href="">e-Randevu</a>
-                            </li>
-                            <li>
-                                <a href="">e-Geri zəng</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="box-main">
+                    <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/5.jpg"></div>
+                    <h3>e-Xidmətlər</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
+                    <ul>
+                        <li>
+                            <a href="">e-Randevu</a>
+                        </li>
+                        <li>
+                            <a href="">e-Geri zəng</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="box-main">
-                        <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/6.jpg"></div>
-                        <h3>Xəbərlər</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
-                        <ul>
-                            <li>
-                                <a href="">Xəbərlər</a>
-                            </li>
-                            <li>
-                                <a href="">Kampaniyalar</a>
-                            </li>
-                            <li>
-                                <a href="">Populyar məqalələr</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="box-main">
+                    <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/assets/images/main/6.jpg"></div>
+                    <h3>Xəbərlər</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut. Maecenas sollicitudin nulla vel nulla faucibus tincidunt.</p>
+                    <ul>
+                        <li>
+                            <a href="">Xəbərlər</a>
+                        </li>
+                        <li>
+                            <a href="">Kampaniyalar</a>
+                        </li>
+                        <li>
+                            <a href="">Populyar məqalələr</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

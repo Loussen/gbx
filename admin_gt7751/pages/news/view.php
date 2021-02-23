@@ -58,6 +58,22 @@ $page_title="Xəbərlər";
 								</select>
 							</div>
 						</div>
+
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-md-2 col-form-label">Dillər:</label>
+                            <div class="col-md-10">
+                                <select class="form-control" onchange="MM_jumpMenu('parent',this,0)">
+                                    <option value="<?php echo addFullUrl(array('lang_filter'=>'all','add'=>0,'edit'=>0))?>">Bütün</option>
+                                    <?php
+                                    $sql=mysqli_query($db,"select id,`name` from langs order by `position`");
+                                    while($row=mysqli_fetch_assoc($sql)){
+                                        if($_GET['lang_filter']==$row["name"]) $selected='selected="selected"'; else $selected='';
+                                        echo '<option value="'.addFullUrl(array('lang_filter'=>$row["name"],'add'=>0,'edit'=>0)).'" '.$selected.' >'.decode_text($row['name']).'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
 						
 					</form>
 		
@@ -65,28 +81,35 @@ $page_title="Xəbərlər";
 						<thead>
 							<tr class="auto_resize">
 								<th><?php echo $input_allcheckbox?> Adı</th>
-								<th>Şəkil</th>
+								<th>Tip</th>
+								<th>Böyük Şəkil</th>
+								<th>Orta Şəkil</th>
+								<th>Kiçik Şəkil</th>
 								<th class="print_hide">Alətlər</th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php
+                        $orderBy = 'order by id desc';
 						$query=str_replace("select id ","select * ",$query_count);
+						if($_GET[lang_filter] != 'all' && isset($_GET[lang_filter]))
+						    $query.= "and lang='$_GET[lang_filter]'";
+
 						$query.=" $orderBy limit $start,$limit";
 						$sql=mysqli_query($db,$query);
 						while($row=mysqli_fetch_assoc($sql))
 						{
 							$image=createFileView($imageFolder,$row["image"]);
-							$author='';
-							if($row["author_id"]>0){
-								$author=mysqli_fetch_assoc(mysqli_query($db,"select $Name from authors where id='$row[author_id]' "));
-								$author='('.$author[$Name].')';
-							}
-							
+							$image_medium=createFileView($imageFolder,$row["image_medium"]);
+							$image_small=createFileView($imageFolder,$row["image_small"]);
+
 							$addButtons=array('<a href="index.php?do=news_gallery&parent_id='.$row["id"].'" data-toggle="tooltip" data-original-title="Qalereya" class="m-r-10"><i class="fa fa-photo fa-lg"></i></a>');
 							echo '<tr>
-									<td>'.checkbox_row($row["id"]).' '.decode_text($row[$Name]).' '.decode_text($author).'</td>
+									<td>'.checkbox_row($row["id"]).' '.strip_tags(decode_text($row['name'],true)).'</td>
+									<td>'.$newsType[$row['type']].'</td>
 									<td>'.$image.'</td>
+									<td>'.$image_medium.'</td>
+									<td>'.$image_small.'</td>
 									<td class="print_hide">'.rowButtons().'</td>
 								</tr>';
 						}

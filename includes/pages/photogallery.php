@@ -25,8 +25,8 @@
                 {
                     ?>
                     <div class="col-xs-6 col-sm-3 mb-15">
-                        <a class="fancybox-thumb" rel="fancybox-thumb" href="<?=SITE_PATH?>/images/<?=$row_gallery['image']?>" title="<?=$row_gallery['name']?>">
-                            <img src="<?=SITE_PATH?>/images/<?=$row_gallery['image_small']?>" class="img-responsive img-thumbnail">
+                        <a class="fancybox-thumb" rel="fancybox-thumb" href="<?=SITE_PATH?>/images/photo_albums_gallery/<?=$row_gallery['image']?>" title="<?=$row_gallery['name']?>">
+                            <img src="<?=SITE_PATH?>/images/photo_albums_gallery/thumb_<?=$row_gallery['image_small']?>" class="img-responsive img-thumbnail">
                         </a>
                     </div>
                     <?php

@@ -1,27 +1,43 @@
 <?php if(!defined('db_name')) { header("Location: ../../"); exit(); die(); } ?>
 
 <?php $t_title_add="Əlavə et"; include "pages/__tools/add_new_link.php"; ?>
-<?php include "pages/__tools/lang_tabs.php"; ?>
 
 <form action="" method="post" enctype="multipart/form-data" class="<?php echo $hideForm?>">
 	<div class="tab-content">
-		
-		<div class="form-group row hide">
-			<label for="example-text-input" class="col-md-2 col-form-label">Kateqoriya:</label>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Dil:</label>
+            <div class="col-md-10">
+                <select required name="lang" class="form-control">
+                    <option value="0">Seçin ...</option>
+                    <?php
+                    $sql=mysqli_query($db,"select id,name from langs order by position");
+                    $inc=1;
+                    while($row=mysqli_fetch_assoc($sql))
+                    {
+                        if($row['name']==$information["lang"]) $selected='selected="selected"'; else $selected='';
+                        echo '<option value="'.$row['name'].'" '.$selected.'>'.decode_text($row['name']).'</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+
+		<div class="form-group row">
+			<label for="example-text-input" class="col-md-2 col-form-label">Tip:</label>
 			<div class="col-md-10">
-				<select name="category_id" class="form-control">
-					<option value="0"></option>
+				<select required name="type" class="form-control">
+					<option value="0">Seçin ...</option>
 					<?php
-					$sql=mysqli_query($db,"select id,$Name from categories order by position");
-					while($row=mysqli_fetch_assoc($sql)){
-						if($row["id"]==$information["category_id"]) $selected='selected="selected"'; else $selected='';
-						echo '<option value="'.$row["id"].'" '.$selected.'>'.decode_text($row[$Name]).'</option>';
+					foreach ($newsType as $keyType => $valType) {
+						if($keyType==$information["type"]) $selected='selected="selected"'; else $selected='';
+						echo '<option value="'.$keyType.'" '.$selected.'>'.decode_text($valType).'</option>';
 					}
 					?>
 				</select>
 			</div>
 		</div>
-		
+
 		<div class="form-group row hide">
 			<label for="example-text-input" class="col-md-2 col-form-label">Müəllif:</label>
 			<div class="col-md-10">
@@ -35,10 +51,10 @@
 					}
 					?>
 				</select>
-                
+
 			</div>
 		</div>
-		
+
 		<?php
 		if($add==1){
 			$datetime=date("d").'/'.date("m").'/'.date("Y");
@@ -58,7 +74,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="form-group row hide">
 			<label for="example-text-input" class="col-md-2 col-form-label">Saat:</label>
 			<div class="col-md-10">
@@ -68,18 +84,38 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<?php
 		$current_file=''; $column_nm='image';
 		if($information[$column_nm]!="" && $edit>0) $current_file=createFileView($imageFolder,$information[$column_nm],$edit,$column_nm);
+
+        $current_file_medium=''; $column_nm_medium='image_medium';
+        if($information[$column_nm_medium]!="" && $edit>0) $current_file_medium=createFileView($imageFolder,$information[$column_nm_medium],$edit,$column_nm);
+
+        $current_file_small=''; $column_nm_small='image_small';
+        if($information[$column_nm_small]!="" && $edit>0) $current_file_small=createFileView($imageFolder,$information[$column_nm_small],$edit,$column_nm);
 		?>
 		<div class="form-group row">
-			<label for="example-text-input" class="col-md-2 col-form-label">Şəkil:</label>
+			<label for="example-text-input" class="col-md-2 col-form-label">Böyük şəkil:</label>
 			<div class="col-md-10">
 				<input name="<?php echo decode_text($column_nm)?>" type="file" /> <?php echo $current_file?>
 			</div>
 		</div>
-		
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Orta şəkil:</label>
+            <div class="col-md-10">
+                <input name="<?php echo decode_text($column_nm_medium)?>" type="file" /> <?php echo $current_file_medium?>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Kiçik şəkil:</label>
+            <div class="col-md-10">
+                <input name="<?php echo decode_text($column_nm_small)?>" type="file" /> <?php echo $current_file_small?>
+            </div>
+        </div>
+
 		<div class="form-group row hide">
 			<label for="example-text-input" class="col-md-2 col-form-label">Flash:</label>
 			<div class="col-md-10">
@@ -88,48 +124,28 @@
 				</div>
 			</div>
 		</div>
-		
-		<?php
-		$sql=mysqli_query($db,"select id,name from langs order by position");
-		$inc=1;
-		while($row=mysqli_fetch_assoc($sql))
-		{
-			echo '<div role="tabpanel" class="tab-pane" id="tab_lang'.$row["id"].'">';
-			
-				echo '
-				<div class="form-group row">
-					<label for="example-text-input" class="col-md-2 col-form-label">Başlıq:</label>
-					<div class="col-md-10">
-						<input name="name_'.decode_text($row["name"]).'" class="form-control" type="text" value="'.decode_text($information["name_".$row["name"]]).'" />
-					</div>
-				</div>
-				
-				<div class="form-group row hide">
-					<label for="example-text-input" class="col-md-2 col-form-label">Açar sözlər:</label>
-					<div class="col-md-10">
-						<input name="keywords_'.decode_text($row["name"]).'" class="form-control" type="text" value="'.decode_text($information["keywords_".$row["name"]]).'" />
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label for="example-text-input" class="col-md-2 col-form-label">Mətn <b>(Qısa izahı)</b>:</label>
-					<div class="col-md-10">
-						<textarea name="short_text_'.decode_text($row["name"]).'" class="form-control" id="-editor'.$inc++.'">'.decode_text($information["short_text_".$row["name"]]).'</textarea>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label for="example-text-input" class="col-md-2 col-form-label">Mətn <b>(Tam izahı)</b>:</label>
-					<div class="col-md-10">
-						<textarea name="full_text_'.decode_text($row["name"]).'" class="form-control" id="editor'.$inc++.'">'.decode_text($information["full_text_".$row["name"]]).'</textarea>
-					</div>
-				</div>
-				';
-			
-			echo '</div>';
-		}
-		?>
-		
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Başlıq:</label>
+            <div class="col-md-10">
+                <input name="name" class="form-control" type="text" value="<?=strip_tags(decode_text($information["name"], true))?>" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Mətn <b>(Qısa izahı)</b>:</label>
+            <div class="col-md-10">
+                <textarea name="short_text" class="form-control" id="editor1"><?=decode_text($information["short_text"])?></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Mətn <b>(Tam izahı)</b>:</label>
+            <div class="col-md-10">
+                <textarea name="full_text" class="form-control" id="editor2"><?=decode_text($information["full_text"])?></textarea>
+            </div>
+        </div>
+
 		<?php $submit_value='Yadda saxla'; include "pages/__tools/submit_button.php"; ?>
 	</div>
 </form>

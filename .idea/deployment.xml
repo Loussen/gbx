@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Contabo fuadhasanli.info" uploadOnCheckin="fb59d89d-704e-4d91-b00c-9e7d1429d83e">
+    <serverData>
+      <paths name="Contabo fuadhasanli.info">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="Contabo fuadhasanli.info" />
+  </component>
+</project>

@@ -4,10 +4,10 @@ $start = microtime(true);
 
 require_once "admin_gt7751/pages/__includes/config.php";
 
-if (!isset($_GET["get_lang_name"])) {
+if(!isset($_GET["get_lang_name"])){
     $actual_link = "https://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-    $new = str_replace($site, $site . '/az', $actual_link);
-    $new = str_replace('www.', '', $new);
+    $new=str_replace($site,$site.'/az',$actual_link);
+    $new=str_replace('www.','',$new);
     header("Location: $new");
     exit;
 }
@@ -44,8 +44,12 @@ require_once "includes/controller.php";
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo">
-                            <img src="<?= SITE_PATH ?>/assets/img/logos/logo-web.svg">
-                            <img width="90" src="<?= SITE_PATH ?>/assets/img/jci.png">
+                            <a href="<?=SITE_PATH?>">
+                                <img src="<?= SITE_PATH ?>/assets/img/logos/logo-web.svg">
+                            </a>
+                            <a href="http://www.jointcommissioninternational.org/about-jci/jci-accredited-organizations/?c=Azerbaijan" target="_blank">
+                                <img width="90" src="<?= SITE_PATH ?>/assets/img/jci.png">
+                            </a>
                         </div>
                     </div>
                     <div class="col-sm-8">

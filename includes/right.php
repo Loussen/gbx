@@ -40,7 +40,7 @@ $row_right_menus = mysqli_fetch_assoc(mysqli_query($db, "select * from menus whe
                             <div class="row">
                                 <div class="col-xs-3">
                                     <a href="#"><img class="img-responsive"
-                                                     src="<?= SITE_PATH ?>/images/<?= $row_news['image_small'] ?>"></a>
+                                                     src="<?= SITE_PATH ?>/images/news/<?= $row_news['image_small'] ?>"></a>
                                 </div>
                                 <div class="col-xs-9">
                                     <span class="a-date"><?= date("d.m.Y", $row_news['datetime']) ?></span> <span
@@ -75,7 +75,7 @@ $row_right_menus = mysqli_fetch_assoc(mysqli_query($db, "select * from menus whe
                             <div class="row">
                                 <div class="col-xs-3">
                                     <a href="#"><img class="img-responsive"
-                                                     src="<?= SITE_PATH ?>/images/<?= $row_campaigns['image_small'] ?>"></a>
+                                                     src="<?= SITE_PATH ?>/images/news/<?= $row_campaigns['image_small'] ?>"></a>
                                 </div>
                                 <div class="col-xs-9">
                                     <span class="a-date"><?= date("d.m.Y", $row_campaigns['datetime']) ?></span> <span
@@ -110,7 +110,7 @@ $row_right_menus = mysqli_fetch_assoc(mysqli_query($db, "select * from menus whe
                             <div class="row">
                                 <div class="col-xs-3">
                                     <a href="#"><img class="img-responsive"
-                                                     src="<?= SITE_PATH ?>/images/<?= $row_popular['image_small'] ?>"></a>
+                                                     src="<?= SITE_PATH ?>/images/news/<?= $row_popular['image_small'] ?>"></a>
                                 </div>
                                 <div class="col-xs-9">
                                     <span class="a-date"><?= date("d.m.Y", $row_popular['datetime']) ?></span> <span

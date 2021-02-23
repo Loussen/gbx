@@ -7,8 +7,8 @@ if(mysqli_num_rows(mysqli_query($db,"select id from $table where id='$parent_id'
 if($edit>0 && mysqli_num_rows(mysqli_query($db,"select id from $do where id='$edit' "))==0) { header("Location: index.php?do=$do"); exit(); die(); }
 
 // For paginator
-$query_count="select id from $do where id>0 and parent_id='$parent_id' ";
-$imageFolder='../images/'.$table.'_gallery/'.$parent_id;
+$query_count="select id from $do where id>0 and album_id='$parent_id' ";
+$imageFolder='../images/'.$table.'_gallery/';
 checkFolderIsset($imageFolder);
 
 if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$do) )
@@ -35,15 +35,16 @@ if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$d
 					move_uploaded_file($image,$uploadImage);
 					
 					checkMaxSizeImage($uploadImage);
-					makeThumb($uploadImage,$imageFolder.'/thumb_'.$imageName,370,210);
+					makeThumb($uploadImage,$imageFolder.'/thumb_'.$imageName,300,200);
 				}
 				$count++;
 			}
 			if($edit>0){
-				mysqli_query($db,"update $do set $query_update,parent_id='$parent_id',image='$imageName' where id='$edit' ");
+				mysqli_query($db,"update $do set $query_update,album_id='$parent_id',image='$imageName' where id='$edit' ");
+				mysqli_query($db,"update $do set $query_update,album_id='$parent_id',image_small='$imageName' where id='$edit' ");
 				break;
 			}
-			else mysqli_query($db,"insert into $do (parent_id,image,position,active,$query_insert) values ('$parent_id','$imageName','$position','$active',$query_insert_val) ");
+			else mysqli_query($db,"insert into $do (album_id,image,image_small,position,active,$query_insert) values ('$parent_id','$imageName','$imageName','$position','$active',$query_insert_val) ");
 		}
 		
 		$ok="Məlumatlar uğurla yadda saxlanıldı.";

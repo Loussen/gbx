@@ -33,8 +33,17 @@
 			<li><a href="index.php?do=home_page" class="waves-effect"><i class="fa fa-home fa-lg"></i> <span class="hide-menu">Ana səhifə</span></a></li>
 			<li><a href="index.php?do=description" class="waves-effect"><i class="fa fa-list-alt fa-lg"></i> <span class="hide-menu">Description</span></a></li>
 			<li><a href="index.php?do=menus" class="waves-effect"><i class="fa fa-navicon fa-lg"></i> <span class="hide-menu">Menyular</span></a></li>
-			<li><a href="index.php?do=about" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Haqqımızda</span></a></li>
+			<li><a href="index.php?do=news" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Xəbərlər</span></a></li>
+			<li><a href="index.php?do=sections" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Bölmələr</span></a></li>
+			<li><a href="index.php?do=professions" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">İxtisaslar</span></a></li>
+			<li><a href="index.php?do=academics" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Akademik adları</span></a></li>
+			<li><a href="index.php?do=doctor_types" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Həkim tipləri</span></a></li>
+			<li><a href="index.php?do=educations" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Təhsil</span></a></li>
+			<li><a href="index.php?do=works" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Təcrübə</span></a></li>
+			<li><a href="index.php?do=conferences" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Konfranslar</span></a></li>
+			<li><a href="index.php?do=membership" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Üzvlük</span></a></li>
 			<li><a href="index.php?do=photo_albums" class="waves-effect"><i class="fa fa-file-image-o fa-lg"></i> <span class="hide-menu">Fotoqalereya</span></a></li>
+			<li><a href="index.php?do=doctors" class="waves-effect"><i class="fa fa-users fa-lg"></i> <span class="hide-menu">Həkimlər</span></a></li>
 			<li><a href="index.php?do=videogallery" class="waves-effect"><i class="fa fa-file-video-o fa-lg"></i> <span class="hide-menu">Videoqalereya</span></a></li>
 			<li><a href="index.php?do=patients" class="waves-effect"><i class="fa fa-users fa-lg"></i> <span class="hide-menu">Pasiyentlər (Video FB)</span></a></li>
 			<li><a href="index.php?do=faq" class="waves-effect"><i class="fa fa-headphones fa-lg"></i> <span class="hide-menu">FAQ</span></a></li>
@@ -44,7 +53,6 @@
 			<li><a href="index.php?do=methods" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Metodlar</span></a></li>
 			<li><a href="index.php?do=appointment" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Müayinə (Kontent)</span></a></li>
 			<li><a href="index.php?do=appointment_users"><i class="fa fa-envelope-o fa-lg"></i> <span class="hide-menu">Müayinə yazılanlar '.$appointment_new.'</span></a></li>
-			<li><a href="index.php?do=news" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Xəbərlər</span></a></li>
 			<li><a href="index.php?do=letters"><i class="fa fa-envelope-o fa-lg"></i> <span class="hide-menu">Məktublar '.$letters_new.'</span></a></li>
 			<li><a href="index.php?do=admin_roles"><i class="fa fa-user fa-lg"></i> <span class="hide-menu">Admin vəzifələri</span></a></li>
 			<li><a href="index.php?do=admins"><i class="fa fa-user fa-lg"></i> <span class="hide-menu">Administrasiya</span></a></li>

@@ -517,7 +517,7 @@ function createFileView($imageFolder,$image,$delete=0,$delete_file_column='image
 		$img=$imageFolder.'/'.$image;
 		if(is_file($imageFolder.'/thumb_'.$image)) $img_thumb=$imageFolder.'/thumb_'.$image; else $img_thumb=$img;
 		if(is_file($img)) $img='<a class="image-popup-no-margins" href="'.$img.'" title=""><img style="margin-top:5px;" src="'.$img_thumb.'" height="50">'.$del_html.''.$crop_html.'</a>';
-		else $img='No Image';
+		else $img = 'No image';
 
 		return $img;
 	}

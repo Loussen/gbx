@@ -15,6 +15,8 @@ if(isset($_GET["change_lang_name"])){
             header("Location: ".$referer);
         }
 
+        header("Location: ".$referer);
+
 		exit();
 	}
 }

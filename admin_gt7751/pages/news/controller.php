@@ -6,6 +6,43 @@ if($edit>0 && mysqli_num_rows(mysqli_query($db,"select id from $do where id='$ed
 $imageFolder='../images/'.$do;
 checkFolderIsset($imageFolder);
 
+//
+
+//$sql_replace = mysqli_query($db, "SELECT id,image,album_id,image_small FROM photo_albums_gallery");
+//
+//while($row_replace = mysqli_fetch_assoc($sql_replace))
+//{
+//    $explode = explode('/',$row_replace['image']);
+//    $imageName = end($explode);
+//    if(!file_exists("../images/photo_albums_gallery/".$imageName))
+//    {
+//        $name = $imageName;
+//        copy("../images/".$row_replace['image'],"../images/photo_albums_gallery/".$name);
+//    }
+//    else
+//    {
+//        $name = time()."_".$imageName;
+//        copy("../images/".$row_replace['image'],"../images/photo_albums_gallery/".$name);
+//    }
+//
+//    $explode_small = explode('/',$row_replace['image_small']);
+//    $imageName_small = end($explode_small);
+//    if(!file_exists("../images/photo_albums_gallery/thumb_".$imageName_small))
+//    {
+//        $name_small = $imageName_small;
+//        copy("../images/".$row_replace['image_small'],"../images/photo_albums_gallery/thumb_".$name_small);
+//    }
+//    else
+//    {
+//        $name_small = time()."_".$imageName_small;
+//        copy("../images/".$row_replace['image_small'],"../images/photo_albums_gallery/thumb_".$name_small);
+//    }
+//
+//    mysqli_query($db,"update photo_albums_gallery set `image`='$name' where id='$row_replace[id]' ");
+//    mysqli_query($db,"update photo_albums_gallery set `image_small`='$name_small' where id='$row_replace[id]' ");
+//}
+//
+
 if(isset($_GET["Type"])) $Type=safe($_GET["Type"]); else $Type=0;
 if(isset($_GET["category_id"])) $category_id=intval($_GET["category_id"]); else $category_id=0;
 if(isset($_GET["author_id"])) $author_id=intval($_GET["author_id"]); else $author_id=0;
@@ -42,7 +79,7 @@ if($Type==1) $query_count.=" and author_id>0 "; else $query_count.=" and author_
 
 if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$do) )
 {
-	$datas_post=array('category_id','author_id','datetime','hour','flash','name','keywords','short_text','full_text');
+	$datas_post=array('type','datetime','name','short_text','full_text','lang');
 	include "pages/__tools/check_post_datas.php";
 	$hour=explode(":",$hour);
 	if(!isset($category_id)) $category_id=0;
@@ -54,20 +91,25 @@ if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$d
 	}
 	else $datetime=$time;
 	
-	if($$Name=='') $error='Başlıq daxil edilməyib. (Dil: '.$lang_name.')';
-	
+	if(!$type > 0) $error='Tip daxil edilməyib.';
+	if($lang == '') $error='Dil daxil edilməyib.';
+	if($name == '') $error='Başlıq daxil edilməyib.';
+
 	if($error==''){
-		include "pages/__tools/create_only_langs_query.php";
 		
-		if($edit>0) mysqli_query($db,"update $do set $query_update,category_id='$category_id',author_id='$author_id',datetime='$datetime',flash='$flash' where id='$edit' ");
-		else mysqli_query($db,"insert into $do (category_id,author_id,datetime,flash,active,$query_insert) values ('$category_id','$author_id','$datetime','$flash','$active',$query_insert_val) ");
+		if($edit>0) mysqli_query($db,"update $do set `type`='$type',datetime='$datetime',`name`='$name',short_text='$short_text',full_text='$full_text',lang='$lang' where id='$edit' ");
+		else mysqli_query($db,"insert into $do (lang,datetime,`name`,short_text,full_text,`type`) values ('$lang','$datetime','$name','$short_text','$full_text',$type) ");
 		$ok="Məlumatlar uğurla yadda saxlanıldı.";
 		$hideForm='hide';
 		
 		if($edit>0) $data_id=$edit; else $data_id=mysqli_insert_id($db);
 		$uploadedFile=fileUpload('image');
+		$uploadedFile_m=fileUpload('image_medium');
+		$uploadedFile_s=fileUpload('image_small');
 		if($uploadedFile!=''){
-			makeThumb($imageFolder.'/'.$uploadedFile,$imageFolder.'/thumb_'.$uploadedFile,300,300);
+			makeThumb($imageFolder.'/'.$uploadedFile,$imageFolder.'/'.$uploadedFile,800,300);
+			makeThumb($imageFolder.'/'.$uploadedFile_m,$imageFolder.'/'.$uploadedFile_m,600,400);
+			makeThumb($imageFolder.'/'.$uploadedFile_s,$imageFolder.'/'.$uploadedFile_s,120,120);
 		}
 	}
 }

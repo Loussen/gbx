@@ -34,7 +34,7 @@
 							FROM sections s
 							LEFT JOIN a_z az on hex(az.name_" . $lang_name . ")=hex(left(s.name_" . $lang_name . ",1))
 							WHERE s.active=1
-							ORDER BY az.id");
+							ORDER BY az.id, s.position");
 
                         $i = 0;
                         $alpha = "";

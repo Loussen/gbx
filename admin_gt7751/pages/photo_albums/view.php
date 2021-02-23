@@ -41,7 +41,7 @@ $page_title="Foroqalereya albom";
 						while($row=mysqli_fetch_assoc($sql))
 						{
 							$image=createFileView($imageFolder,$row["image"]);
-							$addButtons=array('<a href="index.php?do=photo_albums_gallery&add=1&parent_id='.$row["id"].'" data-toggle="tooltip" data-original-title="Qalereya" class="m-r-10"><i class="fa fa-photo fa-lg"></i></a>');
+							$addButtons=array('<a href="index.php?do=photo_albums_gallery&parent_id='.$row["id"].'" data-toggle="tooltip" data-original-title="Qalereya" class="m-r-10"><i class="fa fa-photo fa-lg"></i></a>');
 							echo '<tr>
 									<td>'.checkbox_row($row["id"]).' '.decode_text($row[$Name]).'</td>
 									<td>'.$image.'</td>

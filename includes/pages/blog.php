@@ -25,7 +25,7 @@
                 ?>
                 <div class="row">
                     <div class="col-sm-5 col-md-4">
-                        <img class="img-responsive img-thumbnail ifw mb-15" src="<?=SITE_PATH?>/images/<?=$row['image_medium']?>" alt="<?=$row['name']?>">
+                        <img class="img-responsive img-thumbnail ifw mb-15" src="<?=SITE_PATH?>/images/news/<?=$row['image_medium']?>" alt="<?=$row['name']?>">
                     </div>
                     <div class="col-sm-7 col-md-8">
                         <h5 class="b-heading"><?=decode_text($row['name'],true)?></h5>
