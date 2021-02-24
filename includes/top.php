@@ -14,16 +14,13 @@
             <div class="col-md-2">
                 <ul class="social-top">
                     <li>
-                        <a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a>
+                        <a target="_blank" href="<?=$info_contacts['facebook']?>"><i aria-hidden="true" class="fa fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a>
+                        <a target="_blank" href="<?=$info_contacts['instagram']?>"><i aria-hidden="true" class="fa fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i aria-hidden="true" class="fa fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i aria-hidden="true" class="fa fa-youtube-play"></i></a>
+                        <a target="_blank" href="<?=$info_contacts['youtube']?>"><i aria-hidden="true" class="fa fa-youtube-play"></i></a>
                     </li>
                 </ul>
             </div>

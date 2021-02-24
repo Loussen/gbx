@@ -65,11 +65,16 @@
 			</div>
 			
 				
-			<div class="clear hide">
+			<div class="clear">
 				<div class="form-group row">
 					<label for="example-text-input" class="col-md-2 col-form-label">Telefon:</label>
 					<div class="col-md-10"><input name="phone" class="form-control" type="text" value="<?php echo decode_text($information["phone"])?>" /></div>
 				</div>
+
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-md-2 col-form-label">Telefon 2:</label>
+                    <div class="col-md-10"><input name="phone2" class="form-control" type="text" value="<?php echo decode_text($information["phone2"])?>" /></div>
+                </div>
 				
 				<div class="form-group row">
 					<label for="example-text-input" class="col-md-2 col-form-label">Google Map:</label>
