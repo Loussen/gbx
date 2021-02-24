@@ -44,16 +44,9 @@
 			<li><a href="index.php?do=membership" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Üzvlük</span></a></li>
 			<li><a href="index.php?do=photo_albums" class="waves-effect"><i class="fa fa-file-image-o fa-lg"></i> <span class="hide-menu">Fotoqalereya</span></a></li>
 			<li><a href="index.php?do=doctors" class="waves-effect"><i class="fa fa-users fa-lg"></i> <span class="hide-menu">Həkimlər</span></a></li>
-			<li><a href="index.php?do=videogallery" class="waves-effect"><i class="fa fa-file-video-o fa-lg"></i> <span class="hide-menu">Videoqalereya</span></a></li>
-			<li><a href="index.php?do=patients" class="waves-effect"><i class="fa fa-users fa-lg"></i> <span class="hide-menu">Pasiyentlər (Video FB)</span></a></li>
-			<li><a href="index.php?do=faq" class="waves-effect"><i class="fa fa-headphones fa-lg"></i> <span class="hide-menu">FAQ</span></a></li>
+			
 			<li><a href="index.php?do=sliders" class="waves-effect"><i class="fa fa-sliders fa-lg"></i> <span class="hide-menu">Slider</span></a></li>
 			<li><a href="index.php?do=contacts" class="waves-effect"><i class="fa fa-mobile fa-lg"></i> <span class="hide-menu">Əlaqə</span></a></li>
-			<li><a href="index.php?do=services" class="waves-effect"><i class="fa fa-stack-exchange fa-lg"></i> <span class="hide-menu">Xidmətlərimiz</span></a></li>
-			<li><a href="index.php?do=methods" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Metodlar</span></a></li>
-			<li><a href="index.php?do=appointment" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Müayinə (Kontent)</span></a></li>
-			<li><a href="index.php?do=appointment_users"><i class="fa fa-envelope-o fa-lg"></i> <span class="hide-menu">Müayinə yazılanlar '.$appointment_new.'</span></a></li>
-			<li><a href="index.php?do=letters"><i class="fa fa-envelope-o fa-lg"></i> <span class="hide-menu">Məktublar '.$letters_new.'</span></a></li>
 			<li><a href="index.php?do=admin_roles"><i class="fa fa-user fa-lg"></i> <span class="hide-menu">Admin vəzifələri</span></a></li>
 			<li><a href="index.php?do=admins"><i class="fa fa-user fa-lg"></i> <span class="hide-menu">Administrasiya</span></a></li>
 			<li><a href="index.php?do=langs"><i class="fa fa-language fa-lg"></i> <span class="hide-menu">Dillər</span></a></li>

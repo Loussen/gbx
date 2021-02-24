@@ -17,6 +17,7 @@
 <link href="<?=SITE_PATH?>/assets/css/sidenav.css" rel="stylesheet">
 <link href="<?=SITE_PATH?>/assets/css/animate.css" rel="stylesheet">
 <link href="<?=SITE_PATH?>/assets/css/bootstrap-select.css" rel="stylesheet">
+<link rel="shortcut icon" href="<?=SITE_PATH?>/assets/img/logos/favicon.ico">
 <?php
     if($do == 'photogallery')
     {

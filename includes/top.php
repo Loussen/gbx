@@ -1,8 +1,8 @@
 <div id="preloader">
     <div id="status">&nbsp;</div>
 </div>
-<div class="mask-bg-1"></div>
-<div class="mask-bg-2"></div>
+<!--<div class="mask-bg-1"></div>-->
+<!--<div class="mask-bg-2"></div>-->
 <div class="top-row">
     <div class="container">
         <div class="row top-pt">

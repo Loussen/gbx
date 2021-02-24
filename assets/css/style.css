@@ -6,7 +6,8 @@ html,body {
 
 body {
 	font-size: 15px;
-	background: #d0a16f url(../img/bg/1.png);
+	/*background: #d0a16f url(../img/bg/1.png);*/
+	background: #fff url(../img/bg/3.png);
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -1543,7 +1544,7 @@ ul.social-top li a i{
 	footer {
 		padding: 15px 0;
 		background: #fff;
-		border-top:10px solid #f15b60;
+		border-top:10px solid #a67a5d;
 	}
 
 	.panel-title {

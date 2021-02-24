@@ -1,7 +1,7 @@
-<div class="patient-serv hidden-sm hidden-xs">
-
-</div>
-<div class="container">
+<!--<div class="patient-serv hidden-sm hidden-xs">-->
+<!---->
+<!--</div>-->
+<div class="container" style="padding: 0 30px;background-color: #fff;border: 1px solid #eee;border-top: none;margin-bottom: 10px;border-radius: 0 0 20px 20px;">
     <div class="sitemap">
         <div class="row">
             <div class="col-sm-6 col-md-4">

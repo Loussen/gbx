@@ -37,7 +37,7 @@ require_once "includes/controller.php";
 <?php require_once "includes/top.php" ?>
 
 
-<div class="container">
+<div class="container" style="padding: 0 30px;background-color: #fff;border: 1px solid #eee;margin-top: 10px;border-radius: 20px 20px 0 0;border-bottom: none; <?=($do == 'home') ? 'border-radius: 20px 20px 0 0;' : 'margin-bottom: 10px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-bottom: 1px solid #eee;'?>">
     <div class="main-wrapper">
         <div class="header">
             <div class="top-head">
