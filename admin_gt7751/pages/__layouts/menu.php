@@ -34,6 +34,7 @@
 			<li><a href="index.php?do=description" class="waves-effect"><i class="fa fa-list-alt fa-lg"></i> <span class="hide-menu">Description</span></a></li>
 			<li><a href="index.php?do=menus" class="waves-effect"><i class="fa fa-navicon fa-lg"></i> <span class="hide-menu">Menyular</span></a></li>
 			<li><a href="index.php?do=news" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Xəbərlər</span></a></li>
+			<li><a href="index.php?do=flash" class="waves-effect"><i class="fa fa-newspaper-o fa-lg"></i> <span class="hide-menu">Flash</span></a></li>
 			<li><a href="index.php?do=sections" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Bölmələr</span></a></li>
 			<li><a href="index.php?do=professions" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">İxtisaslar</span></a></li>
 			<li><a href="index.php?do=academics" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Akademik adları</span></a></li>

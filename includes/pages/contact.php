@@ -27,7 +27,7 @@
                                 <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
                             </div>
                         </div>
-                        <textarea class="form-control" id="message" name="message" placeholder="Mesaj" rows="3"></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="Mesaj" rows="3" required minlength="10"></textarea>
                         <br />
                         <div class="row">
                             <div class="col-xs-12 col-md-12">
@@ -41,9 +41,9 @@
                         <h4 class="contact-head">Əlaqə</h4>
                         <p><i aria-hidden="true" class="fa fa-phone"></i> <?=$info_contacts['phone']?><p>
                         <p><i aria-hidden="true" class="fa fa-phone"></i> <?=$info_contacts['phone2']?><p>
-                        <p><i aria-hidden="true" class="fa fa-map-marker"></i> <?=$info_contacts['address']?><p>
-                        <p><i aria-hidden="true" class="fa fa-envelope"></i> <?=$info_contacts['mail']?><p>
-                        <p><i aria-hidden="true" class="fa fa-envelope"></i> <?=$info_contacts['mail2']?><p>
+                        <p><i aria-hidden="true" class="fa fa-map-marker"></i> <?=$info_contacts['text_'.$lang_name]?><p>
+                        <p><i aria-hidden="true" class="fa fa-envelope"></i> <?=$info_contacts['email']?><p>
+                        <p><i aria-hidden="true" class="fa fa-envelope"></i> <?=$info_contacts['email2']?><p>
                         <p><i aria-hidden="true" class="fa fa-globe"></i> <?=$info_contacts['website']?><p>
                     </div>
                 </div>

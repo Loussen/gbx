@@ -70,10 +70,10 @@ require_once "includes/controller.php";
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <img width="90" src="<?= SITE_PATH ?>/assets/img/alo1_2.svg">
+                                <a href="tel: +99422203"><img width="90" src="<?= SITE_PATH ?>/assets/img/alo1_2.svg"></a>
                                 <ul class="phone-main">
-                                    <li>+994 22 255 38 38</li>
-                                    <li>+994 22 255 83 83</li>
+                                    <li><a href="tel: <?=$info_contacts['phone']?>"><?=$info_contacts['phone']?></a></li>
+                                    <li><a href="tel: <?=$info_contacts['phone2']?>"><?=$info_contacts['phone2']?></a></li>
                                 </ul>
                             </div>
                         </div>

@@ -35,6 +35,14 @@
 				<label for="example-text-input" class="col-md-2 col-form-label">Email:</label>
 				<div class="col-md-10"><input name="email" class="form-control" type="text" value="<?php echo decode_text($information["email"])?>" /></div>
 			</div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 col-form-label">Email 2:</label>
+                <div class="col-md-10"><input name="email2" class="form-control" type="text" value="<?php echo decode_text($information["email2"])?>" /></div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 col-form-label">Website:</label>
+                <div class="col-md-10"><input name="website" class="form-control" type="text" value="<?php echo decode_text($information["website"])?>" /></div>
+            </div>
 			<div class="form-group row">
 				<label for="example-text-input" class="col-md-2 col-form-label">Facebook:</label>
 				<div class="col-md-10"><input name="facebook" class="form-control" type="text" value="<?php echo decode_text($information["facebook"])?>" /></div>

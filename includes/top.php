@@ -8,7 +8,17 @@
         <div class="row top-pt">
             <div class="col-md-9">
                 <div class="marquee">
-                    <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> 24.06.16</span><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut.</a> <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> 22.06.16</span><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut.</a> <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> 20.06.16</span><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut.</a>
+                    <?php
+                        $sql_flash = mysqli_query($db, "SELECT * FROM flash WHERE active = 1");
+
+                        while($row_flash = mysqli_fetch_assoc($sql_flash))
+                        {
+                            ?>
+                            <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> <?=date("d.m.Y", $row_flash['datetime'])?></span><a href="<?=$row_flash['url']?>" <?=$row_flash['target']?>><?=$row_flash['title_'.$lang_name]?></a>
+                            <?php
+                        }
+                    ?>
+<!--                    <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> 24.06.16</span><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut.</a> <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> 22.06.16</span><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut.</a> <span class="mar-date"><i aria-hidden="true" class="fa fa-calendar"></i> 20.06.16</span><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices diam felis, sed euismod dui sollicitudin ut.</a>-->
                 </div>
             </div>
             <div class="col-md-2">
