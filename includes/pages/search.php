@@ -11,7 +11,8 @@ if(isset($_GET["search"]))
 
     $key_word = explode(' ',str_replace($evval,$sonra,$search));
 
-    $query = "SELECT name, id, catalog, position FROM (Select menus.name_".$lang_name." name, menus.id id, 'menus' catalog, menus.position position from menus where (name_".$lang_name." LIKE '%".$search."%' or text_".$lang_name." LIKE '%".$search."%') and active = 1
+    $query = "SELECT name, id, catalog, position FROM 
+(Select menus.name_".$lang_name." name, menus.id id, 'menus' catalog, menus.position position from menus where (name_".$lang_name." LIKE '%".$search."%' or text_".$lang_name." LIKE '%".$search."%') and active = 1
 union
 Select sections.name_".$lang_name." name, sections.id id, 'sections' catalog, sections.position position from sections where (name_".$lang_name." LIKE '%".$search."%' or text_".$lang_name." LIKE '%".$search."%' or section_".$lang_name." LIKE '%".$search."%' or operation_".$lang_name." LIKE '%".$search."%') and active = 1
 union
@@ -69,11 +70,46 @@ Select photo_albums.name_".$lang_name." name, photo_albums.id id, 'photo' catalo
                     <?php
                         while($row_search = mysqli_fetch_assoc($result_search))
                         {
+                            if($row_search['catalog'] == 'menus')
+                            {
+                                $link = SITE_PATH.'/pages/' . slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang43;
+                            }
+                            elseif($row_search['catalog'] == 'sections')
+                            {
+                                $link = SITE_PATH.'/bolme/'.slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang44;
+                            }
+                            elseif($row_search['catalog'] == 'news')
+                            {
+                                $link = SITE_PATH.'/xeber/'.slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang3;
+                            }
+                            elseif($row_search['catalog'] == 'popular')
+                            {
+                                $link = SITE_PATH.'/xeber/'.slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang5;
+                            }
+                            elseif($row_search['catalog'] == 'campaign')
+                            {
+                                $link = SITE_PATH.'/xeber/'.slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang4;
+                            }
+                            elseif($row_search['catalog'] == 'doctors')
+                            {
+                                $link = SITE_PATH.'/hekim/'.slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang11;
+                            }
+                            elseif($row_search['catalog'] == 'photo')
+                            {
+                                $link = SITE_PATH.'/fotoqalereya/'.slugGenerator($row_search['name']).'-'.$row_search["id"];
+                                $catalog = $lang45;
+                            }
                             ?>
                             <div class="search-result-box">
-                                <a class="s-title" href="#"><?=$row_search['name']?></a>
-                                <a class="s-url" href="#">www.link.com</a>
-                                <span class="s-cat"><?=$row_search['catalog']?></span>
+                                <a class="s-title" href="<?=$link?>"><?=$row_search['name']?></a>
+                                <a class="s-url" href="<?=$link?>"><?=$link?></a>
+                                <span class="s-cat"><?=$catalog?></span>
                             </div>
                             <?php
                         }

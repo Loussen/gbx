@@ -33,13 +33,14 @@ elseif($do=='news'){
 
 	if($info_data['type'] == 2) {
 	    $link = 'kampaniyalar';
+        $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$link' "));
     } elseif($info_data['type'] == 3) {
 	    $link = 'populyar-meqaleler';
+        $info_menu['name_'.$lang_name] = $lang5;
     } else {
 	    $link = 'xeberler';
+        $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$link' "));
     }
-
-    $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$link' "));
 
     if($info_menu['parent_id']>0) {
         $parentExistId = $info_menu['parent_id'];
