@@ -32,7 +32,7 @@
                         <span class="b-date"><i aria-hidden="true" class="fa fa-calendar"></i> <?=date("d.m.Y", $row['datetime'])?></span>
                         <span class="b-views"><i aria-hidden="true" class="fa fa-eye"></i> <?=$row['read_count']?></span>
                         <p class="b-info"><?=$row['short_text']?></p>
-                        <a class="btn btn-more btn-sm" href="<?=$site?>/xeber/<?=slugGenerator($row['name']).'-'.$row["id"]?>">daha ətraflı</a>
+                        <a class="btn btn-more btn-sm" href="<?=$site?>/xeber/<?=slugGenerator($row['name']).'-'.$row["id"]?>"><?=$lang6?></a>
                     </div>
                 </div>
 

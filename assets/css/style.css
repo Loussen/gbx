@@ -257,7 +257,7 @@ a {
 	float: right;
 	margin: 0;
 	list-style: none;
-	background: url(../img/alo.svg) 11% bottom no-repeat;
+	background: url(../img/alo.png) 11% bottom no-repeat;
 }
 
 .phone-main li {
@@ -594,8 +594,8 @@ textarea.input-lg,textarea.form-control.input-lg,input.form-control.input-lg,inp
 }
 
 .box-main p {
-	font-size: 14px;
-	line-height: 24px;
+	font-size: 13px;
+	line-height: 20px;
 	margin: 0 15px 15px;
 }
 
@@ -1423,6 +1423,11 @@ strong{
 
 ul.social-top li a i{
 	/* color: #fff; */
+}
+
+.has-error
+{
+	border-bottom: 1px solid red !important;
 }
 
 @media (min-width: 0) {

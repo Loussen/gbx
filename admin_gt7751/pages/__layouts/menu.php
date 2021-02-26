@@ -45,8 +45,9 @@
 			<li><a href="index.php?do=membership" class="waves-effect"><i class="fa fa-list fa-lg"></i> <span class="hide-menu">Üzvlük</span></a></li>
 			<li><a href="index.php?do=photo_albums" class="waves-effect"><i class="fa fa-file-image-o fa-lg"></i> <span class="hide-menu">Fotoqalereya</span></a></li>
 			<li><a href="index.php?do=doctors" class="waves-effect"><i class="fa fa-users fa-lg"></i> <span class="hide-menu">Həkimlər</span></a></li>
-			
+			<li><a href="index.php?do=appointment_users"><i class="fa fa-envelope-o fa-lg"></i> <span class="hide-menu">Əlaqə yaradanlar '.$appointment_new.'</span></a></li>
 			<li><a href="index.php?do=sliders" class="waves-effect"><i class="fa fa-sliders fa-lg"></i> <span class="hide-menu">Slider</span></a></li>
+			<li><a href="index.php?do=checkup" class="waves-effect"><i class="fa fa-sliders fa-lg"></i> <span class="hide-menu">Checkup</span></a></li>
 			<li><a href="index.php?do=contacts" class="waves-effect"><i class="fa fa-mobile fa-lg"></i> <span class="hide-menu">Əlaqə</span></a></li>
 			<li><a href="index.php?do=admin_roles"><i class="fa fa-user fa-lg"></i> <span class="hide-menu">Admin vəzifələri</span></a></li>
 			<li><a href="index.php?do=admins"><i class="fa fa-user fa-lg"></i> <span class="hide-menu">Administrasiya</span></a></li>

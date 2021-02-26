@@ -43,6 +43,13 @@ if ($do == 'photogallery') {
     </script>
     <?php
 }
+
+if($do == 'checkup')
+{
+    ?>
+    <script src="<?= SITE_PATH ?>/assets/js/ism-2.3.min.js"></script>
+    <?php
+}
 ?>
     <script src="<?= SITE_PATH ?>/assets/js/scripts.js"></script>
 <?php
@@ -83,6 +90,45 @@ if ($do == 'photogallery') {
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);
+
+            $(document).ready(function () {
+                var base_url = '<?=SITE_PATH?>';
+
+                $(document).on('submit','form#contact-form',function(e){
+                    e.preventDefault();
+
+                    $('#contact-form').css('opacity','0.3');
+                    $('.has-error').removeClass('has-error');
+
+                    var formData = new FormData(this);
+
+                    $.ajax({
+                        url: base_url+'/contact.php',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        dataType: 'json',
+                        success: function (data, textStatus, jqXHR) {
+                            if(data.code==0)
+                            {
+                                $('#contact-form').css('opacity','1');
+                                $('[name="'+data.err_param+'"]').addClass('has-error');
+                            }
+                            else
+                            {
+                                $("form#contact-form").css("display","none");
+                                $('div.success_contact').show();
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            $('#contact-form').css('opacity','1');
+                        }
+                    });
+
+                });
+            });
 
         </script>
         <?php

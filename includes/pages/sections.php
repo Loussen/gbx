@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <div id="custom-search-input" class="bg-s2">
                         <div class="input-group col-md-12 search_section">
-                            <input class="form-control" placeholder="Bölmə adı..." type="text">
+                            <input class="form-control" placeholder="<?=$lang7?>..." type="text">
                             <span class="input-group-btn">
                                 <button class="btn btn-info btn-lg" type="button">
                                     <span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn"><i class="glyphicon glyphicon-search"></i></span></span></span></span>

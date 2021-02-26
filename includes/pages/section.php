@@ -21,8 +21,7 @@
                                 <div class="" id="headingTwo" role="tab">
                                     <h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="false"
                                                                class="collapsed" data-parent="#accordion"
-                                                               data-toggle="collapse" href="#collapseTwo" role="button">Tibbi
-                                            bölmə haqqında məlumat</a></h4>
+                                                               data-toggle="collapse" href="#collapseTwo" role="button"><?=$lang8?></a></h4>
                                 </div>
                                 <div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo"
                                      role="tabpanel">
@@ -40,8 +39,7 @@
                                     <h4 class="panel-title"><a aria-controls="collapseThree" aria-expanded="false"
                                                                class="collapsed" data-parent="#accordion"
                                                                data-toggle="collapse" href="#collapseThree"
-                                                               role="button">Müalicə
-                                            edilən xəstəliklər</a></h4>
+                                                               role="button"><?=$lang9?></a></h4>
                                 </div>
                                 <div aria-labelledby="headingThree" class="panel-collapse collapse" id="collapseThree"
                                      role="tabpanel">
@@ -59,8 +57,7 @@
                                     <h4 class="panel-title"><a aria-controls="collapseFour" aria-expanded="false"
                                                                class="collapsed" data-parent="#accordion"
                                                                data-toggle="collapse" href="#collapseFour"
-                                                               role="button">İcra
-                                            edilən prosedur və əməliyyatlar</a></h4>
+                                                               role="button"><?=$lang10?></a></h4>
                                 </div>
                                 <div aria-labelledby="headingFour" class="panel-collapse collapse" id="collapseFour"
                                      role="tabpanel">
@@ -95,7 +92,7 @@
                 <div class="row">
                     <div class="col-md-12 mb-15">
                         <div class="doc-list-head">
-                            <h4>Konsultant həkimlər</h4>
+                            <h4><?=$lang39?></h4>
                         </div>
                     </div>
 
@@ -141,7 +138,7 @@
                 <div class="row">
                     <div class="col-md-12 mb-15">
                         <div class="doc-list-head">
-                            <h4>Həkimlər</h4>
+                            <h4><?=$lang11?></h4>
                         </div>
                     </div>
 

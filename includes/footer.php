@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <p class="copy">© 2016 Gəncə Beynəlxalq Xəstəxanası. Müəllif hüquqları qorunur.</p>
+                <p class="copy">© <?=date("Y")?> <?=$lang2?></p>
             </div>
 <!--            <div class="col-sm-6">-->
 <!--                <p class="nco">Made by <a href="http://ncostudio.az/" target="_blank"><strong>NCO</strong></a></p>-->

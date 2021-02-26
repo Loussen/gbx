@@ -29,7 +29,7 @@ $row_right_menus = mysqli_fetch_assoc(mysqli_query($db, "select * from menus whe
 
     if ($count_news > 0) {
         ?>
-        <h4 class="aside-cat-head">Xəbərlər</h4>
+        <h4 class="aside-cat-head"><?=$lang3?></h4>
         <div class="aside-inner">
             <div class="aside-blog-list">
                 <ul>
@@ -64,7 +64,7 @@ $row_right_menus = mysqli_fetch_assoc(mysqli_query($db, "select * from menus whe
 
     if ($count_campaigns > 0) {
         ?>
-        <h4 class="aside-cat-head">Kampaniyalar</h4>
+        <h4 class="aside-cat-head"><?=$lang4?></h4>
         <div class="aside-inner">
             <div class="aside-blog-list">
                 <ul>
@@ -99,7 +99,7 @@ $row_right_menus = mysqli_fetch_assoc(mysqli_query($db, "select * from menus whe
 
     if ($sql_popular > 0) {
         ?>
-        <h4 class="aside-cat-head">Populyar məqalələr</h4>
+        <h4 class="aside-cat-head"><?=$lang5?></h4>
         <div class="aside-inner">
             <div class="aside-blog-list">
                 <ul>

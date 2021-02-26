@@ -96,9 +96,12 @@ $(document).ready(function () {
     });
 
     $("div.wrapper-1 img").addClass("img-responsive");
+    $("img.checkup_img").removeClass("img-responsive");
 });
 
 $(document).ready(function () {
+    var base_url = '<?=SITE_PATH?>';
+
     $("div.search_section input").on("keyup", function () {
         search_section($(this));
     });
@@ -125,7 +128,7 @@ $(document).ready(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     }
-})
+});
 
 
 

@@ -56,10 +56,11 @@ require_once "includes/controller.php";
                         <div class="row pdtb">
                             <div class="col-sm-6">
                                 <div id="custom-search-input">
+                                    <form action="<?=SITE_PATH?>/axtarish" method="GET">
                                     <div class="input-group col-md-12">
-                                        <input class="form-control" placeholder="Həkim, xidmət, xəstəlik, check-up..."
+                                        <input class="form-control" name="search" placeholder="<?=$lang1?>..."
                                                type="text"> <span class="input-group-btn"><button
-                                                    class="btn btn-info btn-lg" type="button"><span
+                                                    class="btn btn-info btn-lg" type="submit"><span
                                                         class="input-group-btn"><span class="input-group-btn"><span
                                                                 class="input-group-btn"><span
                                                                     class="input-group-btn"><span
@@ -67,6 +68,7 @@ require_once "includes/controller.php";
                                                                             class="input-group-btn"><i
                                                                                 class="glyphicon glyphicon-search"></i></span></span></span></span></span></span></button></span>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-sm-6">

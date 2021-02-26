@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-heading">
-                        <h3>Həkimlər</h3>
+                        <h3><?=$lang11?></h3>
                     </div>
                 </div>
                 <?php
@@ -28,19 +28,19 @@
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td class="col-sm-3"><strong>Status</strong></td>
+                                    <td class="col-sm-3"><strong><?=$lang13?></strong></td>
                                     <td class="col-sm-9"><?=$row_doctor['tname']?></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-3"><strong>Elmi dərəcə</strong></td>
+                                    <td class="col-sm-3"><strong><?=$lang14?></strong></td>
                                     <td class="col-sm-9"><?=$row_doctor['aname']?></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-3"><strong>İxtisas</strong></td>
+                                    <td class="col-sm-3"><strong><?=$lang15?></strong></td>
                                     <td class="col-sm-9"><?=$row_doctor['pname']?></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-3"><strong>Tibbi bölmə</strong></td>
+                                    <td class="col-sm-3"><strong><?=$lang16?></strong></td>
                                     <td class="col-sm-9">
                                         <a href="<?=$site."/bolme/".slugGenerator($row_doctor['sname']).'-'.$row_doctor["s_id"]?>"><?=$row_doctor['sname']?></a>
                                     </td>
@@ -62,8 +62,7 @@
                                     <div class="" id="headingTwo" role="tab">
                                         <h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="false"
                                                                    class="collapsed" data-parent="#accordion"
-                                                                   data-toggle="collapse" href="#collapseTwo" role="button">Müalicə
-                                                etdiyi xəstəliklər</a></h4>
+                                                                   data-toggle="collapse" href="#collapseTwo" role="button"><?=$lang17?></a></h4>
                                     </div>
                                     <div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo"
                                          role="tabpanel">
@@ -82,8 +81,7 @@
                                     <div class="" id="headingThree" role="tab">
                                         <h4 class="panel-title"><a aria-controls="collapseThree" aria-expanded="false"
                                                                    class="collapsed" data-parent="#accordion"
-                                                                   data-toggle="collapse" href="#collapseThree" role="button">Prosedur
-                                                və Əməliyyatlar</a></h4>
+                                                                   data-toggle="collapse" href="#collapseThree" role="button"><?=$lang18?></a></h4>
                                     </div>
                                     <div aria-labelledby="headingThree" class="panel-collapse collapse" id="collapseThree"
                                          role="tabpanel">
@@ -135,7 +133,7 @@
                                     ?>
                                     <li class="active" role="presentation">
                                         <a aria-controls="home" data-toggle="tab" href="#home"
-                                           role="tab"><strong>Təhsil</strong></a>
+                                           role="tab"><strong><?=$lang19?></strong></a>
                                     </li>
                                     <?php
                                 }
@@ -145,7 +143,7 @@
                                     ?>
                                     <li role="presentation">
                                         <a aria-controls="profile" data-toggle="tab" href="#profile"
-                                           role="tab"><strong>Təcrübə</strong></a>
+                                           role="tab"><strong><?=$lang20?></strong></a>
                                     </li>
                                     <?php
                                 }
@@ -154,7 +152,7 @@
                                 {
                                     ?>
                                     <li role="presentation">
-                                        <a aria-controls="messages" data-toggle="tab" href="#messages" role="tab"><strong>Konfrans</strong></a>
+                                        <a aria-controls="messages" data-toggle="tab" href="#messages" role="tab"><strong><?=$lang21?></strong></a>
                                     </li>
                                     <?php
                                 }
@@ -164,7 +162,7 @@
                                     ?>
                                     <li role="presentation">
                                         <a aria-controls="settings" data-toggle="tab" href="#settings"
-                                           role="tab"><strong>Üzvlük</strong></a>
+                                           role="tab"><strong><?=$lang22?></strong></a>
                                     </li>
                                     <?php
                                 }
@@ -180,10 +178,10 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th>Müddət</th>
-                                                    <th>Adı</th>
-                                                    <th>İxtisas</th>
-                                                    <th>Yer</th>
+                                                    <th><?=$lang23?></th>
+                                                    <th><?=$lang24?></th>
+                                                    <th><?=$lang25?></th>
+                                                    <th><?=$lang26?></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -215,10 +213,10 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th>Müddət</th>
-                                                    <th>Adı</th>
-                                                    <th>Vəzifə</th>
-                                                    <th>Yer</th>
+                                                    <th><?=$lang23?></th>
+                                                    <th><?=$lang24?></th>
+                                                    <th><?=$lang27?></th>
+                                                    <th><?=$lang26?></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -250,10 +248,10 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th>Tarix</th>
-                                                    <th>Adı</th>
-                                                    <th>Status</th>
-                                                    <th>Yer</th>
+                                                    <th><?=$lang28?></th>
+                                                    <th><?=$lang24?></th>
+                                                    <th><?=$lang13?></th>
+                                                    <th><?=$lang26?></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -285,8 +283,8 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th>Başlama tarixi</th>
-                                                    <th>Qurum</th>
+                                                    <th><?=$lang29?></th>
+                                                    <th><?=$lang30?></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>

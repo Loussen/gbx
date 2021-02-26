@@ -7,6 +7,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^home(/?)$ index.php [L,QSA]
 RewriteRule ^haqqimizda(/?)$ index.php?do=about [L,QSA]
+RewriteRule ^axtarish(/?)$ index.php?do=search [L,QSA]
+RewriteRule ^checkup(/?)$ index.php?do=checkup [L,QSA]
 RewriteRule ^videoqalereya(/?)$ index.php?do=videoqalereya [L,QSA]
 RewriteRule ^albomlar(/?)$ index.php?do=albums [L,QSA]
     RewriteRule ^fotoqalereya/([0-9a-zA-Züöğıəçşйцукенгшщзхъфывапролджэячсмитьбюё+_-]+)-([0-9]+)(/?)$ index.php?do=photogallery&id=$2 [L,QSA]
@@ -24,6 +26,8 @@ RewriteRule ^elaqe(/?)$ index.php?do=contact [L,QSA]
 
 RewriteRule ^(az|en|ru|tr)(/?)$ index.php?get_lang_name=$1 [L,QSA]
 RewriteRule ^(az|en|ru|tr)/home(/?)$ index.php?get_lang_name=$1 [L,QSA]
+RewriteRule ^(az|en|ru|tr)/checkup(/?)$ index.php?do=checkup&get_lang_name=$1 [L,QSA]
+RewriteRule ^(az|en|ru|tr)/axtarish(/?)$ index.php?do=search&get_lang_name=$1 [L,QSA]
 RewriteRule ^(az|en|ru|tr)/albomlar(/?)$ index.php?do=albums&get_lang_name=$1 [L,QSA]
     RewriteRule ^(az|en|ru|tr)/fotoqalereya/([0-9a-zA-Züöğıəçşйцукенгшщзхъфывапролджэячсмитьбюё+_-]+)-([0-9]+)(/?)$ index.php?do=photogallery&get_lang_name=$1&id=$3 [L,QSA]
 RewriteRule ^(az|en|ru|tr)/pages/([0-9a-zA-Züöğıəçşйцукенгшщзхъфывапролджэячсмитьбюё+_-]+)-([0-9]+)(/?)$ index.php?do=pages&get_lang_name=$1&menu_id=$3 [L,QSA]

@@ -29,6 +29,8 @@ elseif($do=='news'){
 	$siteKeywords=$info_description["keywords_".$lang_name];
 	$siteImage=SITE_PATH.'/images/'.$info_data['image_medium'];
 
+    $query = mysqli_query($db,"update news set read_count=read_count+1 WHERE id='$id' AND active=1");
+
 	if($info_data['type'] == 2) {
 	    $link = 'kampaniyalar';
     } elseif($info_data['type'] == 3) {
@@ -170,29 +172,29 @@ elseif($do=='doctors')
         switch ($doctorTypeIndex)
         {
             case 2:
-                $title='Həkimlər (Bölmə üzrə)';
-                $placeholder='Tibbi bölmənin adı...';
+                $title=$lang32;
+                $placeholder=$lang31.'...';
                 $column="s.name_".$lang_name;
                 $column1=$column;
                 $doctor_status="0";
                 break;
             case 3:
-                $title='Həkimlər (İxtisas üzrə)';
-                $placeholder='Həkim ixtisası...';
+                $title=$lang33;
+                $placeholder=$lang34.'...';
                 $column="p.name_".$lang_name;
                 $column1=$column;
                 $doctor_status="0";
                 break;
             case 4:
-                $title='Qonaq Həkimlər';
-                $placeholder='Həkim adı və ya soyadı...';
+                $title=$lang41;
+                $placeholder=$lang12.'...';
                 $column="d.name_".$lang_name;
                 $column1="left(".$column.",1)";
                 $doctor_status="1";
                 break;
             default:
-                $title='Həkimlərimiz';
-                $placeholder='Həkim adı və ya soyadı...';
+                $title=$lang40;
+                $placeholder=$lang12.'...';
                 $column="d.name_".$lang_name;
                 $column1="left(".$column.",1)";
                 $doctor_status="0";

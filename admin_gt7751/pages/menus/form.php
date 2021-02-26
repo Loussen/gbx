@@ -21,6 +21,13 @@
 				</div>
 				
 				<div class="form-group row">
+					<label for="example-text-input" class="col-md-2 col-form-label">Qısa Mətn:</label>
+					<div class="col-md-10">
+						<textarea name="short_text_'.decode_text($row["name"]).'" class="form-control">'.decode_text($information["short_text_".$row["name"]]).'</textarea>
+					</div>
+				</div>
+				
+				<div class="form-group row">
 					<label for="example-text-input" class="col-md-2 col-form-label">Mətn:</label>
 					<div class="col-md-10">
 						<textarea name="text_'.decode_text($row["name"]).'" class="form-control" id="editor'.$inc++.'">'.decode_text($information["text_".$row["name"]]).'</textarea>

@@ -20,11 +20,7 @@ if($_POST)
         $response = json_encode(array("code"=>0, "content" => "Error name", "err_param" => 'name'));
     elseif(strlen($email)<4 || !filter_var($email, FILTER_VALIDATE_EMAIL))
         $response = json_encode(array("code"=>0, "content" => "Error email", "err_param" => 'email'));
-    elseif(strlen($phone)<4 || !filter_var($phone, FILTER_SANITIZE_NUMBER_INT))
-        $response = json_encode(array("code"=>0, "content" => "Error phone", "err_param" => 'phone'));
-    elseif(strlen($subject)<4)
-        $response = json_encode(array("code"=>0, "content" => "Error subject", "err_param" => 'subject'));
-    elseif(strlen($message)<4)
+    elseif(strlen($message)<10)
         $response = json_encode(array("code"=>0, "content" => "Error message", "err_param" => 'message'));
     else
     {
@@ -61,7 +57,7 @@ if($_POST)
 //            $mail->Body    = $message;
             $date = date("Y-m-d H:i:s");
 
-            $insert = mysqli_query($db,"insert into `letters` (`name`,`email`,`phone`,`subject`,`message`,`datetime`) values ('$name','$email','$phone','$subject','$message', '$date')");
+            $insert = mysqli_query($db,"insert into `appointment_users` (`name`,`email`,`message`,`datetime`) values ('$name','$email','$message', '$date')");
 
             if(/*$mail->send()*/ $insert)
             {

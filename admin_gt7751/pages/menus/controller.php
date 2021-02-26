@@ -10,7 +10,7 @@ checkFolderIsset($imageFolder);
 
 if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$do) )
 {
-	$datas_post=array('name','text','icon_code','link','parent_id');
+	$datas_post=array('name','text','short_text','icon_code','link','parent_id');
 	include "pages/__tools/check_post_datas.php";
 	
 	if($$Name=='') $error='Ad daxil edilməyib. (Dil: '.$lang_name.')';
@@ -26,7 +26,7 @@ if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$d
 		if($edit>0) $data_id=$edit; else $data_id=mysqli_insert_id($db);
 		$uploadedFile=fileUpload('image');
 		if($uploadedFile!=''){
-			makeThumb($imageFolder.'/'.$uploadedFile,$imageFolder.'/thumb_'.$uploadedFile,800,800);
+			makeThumb($imageFolder.'/'.$uploadedFile,$imageFolder.'/thumb_'.$uploadedFile,350,230);
 		}
 	}
 }

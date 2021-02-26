@@ -17,17 +17,19 @@
 
             <div class="row cnt-det">
                 <div class="col-sm-12 col-md-7 mb-15">
-                    <form id="contact" method="post" class="form form-gbx" role="form">
+                    <div class="alert alert-success success_contact" style="display: none;"><?=$lang8?></div>
+                    <div class="alert alert-warning error_contact" style="display: none;"><?=$lang9?></div>
+                    <form id="contact-form" class="form form-gbx" action="#">
                         <h4 class="contact-head">Bizə yazın!</h4>
                         <div class="row">
                             <div class="col-xs-6 col-md-6 form-group">
-                                <input class="form-control" id="name" name="name" placeholder="Ad, Soyad" type="text" required autofocus />
+                                <input class="form-control" id="name" name="name" placeholder="Ad, Soyad" type="text" autocomplete="off" />
                             </div>
                             <div class="col-xs-6 col-md-6 form-group">
-                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" autocomplete="off" />
                             </div>
                         </div>
-                        <textarea class="form-control" id="message" name="message" placeholder="Mesaj" rows="3" required minlength="10"></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="Mesaj" rows="3" autocomplete="off" minlength="10"></textarea>
                         <br />
                         <div class="row">
                             <div class="col-xs-12 col-md-12">

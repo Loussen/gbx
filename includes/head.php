@@ -27,6 +27,14 @@
         <link rel="stylesheet" href="<?=SITE_PATH?>/assets/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
         <?php
     }
+
+    if($do == 'checkup')
+    {
+        ?>
+        <link href="<?=SITE_PATH?>/assets/css/one2.css" rel="stylesheet">
+        <link href="<?=SITE_PATH?>/assets/css/my-slider3.css" rel="stylesheet">
+        <?php
+    }
 ?>
 <link href="<?=SITE_PATH?>/assets/css/style.css" rel="stylesheet"><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
