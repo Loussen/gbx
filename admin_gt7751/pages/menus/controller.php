@@ -10,16 +10,18 @@ checkFolderIsset($imageFolder);
 
 if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$do) )
 {
-	$datas_post=array('name','text','short_text','icon_code','link','parent_id');
+	$datas_post=array('name','text','short_text','icon_code','link','parent_id','flash');
 	include "pages/__tools/check_post_datas.php";
 	
 	if($$Name=='') $error='Ad daxil edilməyib. (Dil: '.$lang_name.')';
 
+    if(!isset($flash)) $flash=0;
+
 	if($error==''){
 		include "pages/__tools/create_only_langs_query.php";
 		
-		if($edit>0) mysqli_query($db,"update $do set $query_update,parent_id='$parent_id',link='$link',icon_code='$icon_code' where id='$edit' ");
-		else mysqli_query($db,"insert into $do (parent_id,link,position,icon_code,active,$query_insert) values ('$parent_id','$link','$position','$icon_code','$active',$query_insert_val) ");
+		if($edit>0) mysqli_query($db,"update $do set $query_update,parent_id='$parent_id',link='$link',icon_code='$icon_code', flash='$flash' where id='$edit' ");
+		else mysqli_query($db,"insert into $do (parent_id,link,position,icon_code,active,flash,$query_insert) values ('$parent_id','$link','$position','$icon_code','$active','$flash',$query_insert_val) ");
 		$ok="Məlumatlar uğurla yadda saxlanıldı.";
 		$hideForm='hide';
 		

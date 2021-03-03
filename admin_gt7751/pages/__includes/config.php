@@ -27,5 +27,5 @@ if(!isset($_SESSION["menu_minimize"])) $_SESSION["menu_minimize"]=false;
 
 require_once 'connect_db.php';
 
-$newsType = [1 => 'Xəbərlər', 2 => 'Kampaniyalar', 3 => 'Populyar məqalələr'];
+$newsType = [1 => 'Xəbərlər', 2 => 'Kampaniyalar', 3 => 'Populyar məqalələr', 4 => 'Vakansiyalar'];
 ?>

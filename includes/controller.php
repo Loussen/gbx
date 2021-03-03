@@ -37,6 +37,9 @@ elseif($do=='news'){
     } elseif($info_data['type'] == 3) {
 	    $link = 'populyar-meqaleler';
         $info_menu['name_'.$lang_name] = $lang5;
+    } elseif($info_data['type'] == 4) {
+        $link = 'vakansiyalar';
+        $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$link' "));
     } else {
 	    $link = 'xeberler';
         $info_menu=mysqli_fetch_assoc(mysqli_query($db,"select * from menus where link='info/$link' "));

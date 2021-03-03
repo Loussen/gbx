@@ -11,25 +11,45 @@
 
             <div class="row">
                 <center>
-                <div id="my-slider3" style="align-items: center;">
-                    <div class="ism-slider" data-play_type="loop" id="my-slider3">
-                        <ol>
-                            <?php
-                                $sql_checkup = mysqli_query($db, "SELECT * FROM checkup WHERE active=1");
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-right: 0% !important;">
+                    <!-- Indicators -->
+                    <?php
+                    $sql_checkup = mysqli_query($db, "SELECT * FROM checkup WHERE active=1");
 
-                                while($row_checkup = mysqli_fetch_assoc($sql_checkup))
-                                {
-                                    ?>
-                                    <li><a href="<?=$row_checkup['url']?>" <?=$row_checkup['target']?>><img src="<?=SITE_PATH?>/images/checkup/<?=$row_checkup['image']?>" class="checkup_img"/></a></li>
-                                    <?php
-                                }
+                    $count = mysqli_num_rows($sql_checkup);
+                    ?>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <?php
+
+                        $j = 1;
+                        while($row_checkup = mysqli_fetch_assoc($sql_checkup))
+                        {
                             ?>
-                        </ol>
+                            <div class="item <?=($j==1) ? 'active' : ''?>">
+                                <img src="<?=SITE_PATH?>/images/checkup/<?=$row_checkup['image']?>">
+                            </div>
+                            <?php
+
+                            $j++;
+                        }
+
+                        ?>
                     </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="top: 50%;">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="top: 50%;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
                 </center>
             </div>
-
         </div>
     </div>
 </div>

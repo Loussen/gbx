@@ -192,6 +192,16 @@ a {
 	transition: all .5s cubic-bezier(0.4,0,0.2,1);
 }
 
+ul.mobile-social-top li a {
+	display:block;
+	text-align:center;
+	color: #a67a5d;
+	width:30px;
+	-webkit-transition: all .5s cubic-bezier(0.4,0,0.2,1);
+	-moz-transition: all .5s cubic-bezier(0.4,0,0.2,1);
+	transition: all .5s cubic-bezier(0.4,0,0.2,1);
+}
+
 .social-top li a:hover, .social-top li a:focus, .lang-top li a:hover, .lang-top li a:focus {
 	text-decoration:none;
 	background: #fff;
@@ -251,13 +261,13 @@ a {
 }
 
 .phone-main {
-	padding-left: 75px;
+	/*padding-left: 75px;*/
 	padding-top: 0;
-	text-align: right;
-	float: right;
+	/*text-align: right;*/
+	/*float: right;*/
 	margin: 0;
 	list-style: none;
-	background: url(../img/alo.png) 11% bottom no-repeat;
+	/*background: url(../img/alo.png) 11% bottom no-repeat;*/
 }
 
 .phone-main li {
@@ -391,6 +401,7 @@ textarea.input-lg,textarea.form-control.input-lg,input.form-control.input-lg,inp
 	margin: 0;
 	font-weight: 700;
 	color: #a67a5d;
+	line-height: 1.7;
 }
 
 .inner-item span {
@@ -398,6 +409,7 @@ textarea.input-lg,textarea.form-control.input-lg,input.form-control.input-lg,inp
 	color: #a67a5d;
 	margin: 0;
 	font-size: 12px;
+	/*margin-top: 10px;*/
 }
 
 .btn {
@@ -1566,6 +1578,11 @@ ul.social-top li a i{
 @media (min-width: 996px) {
 	.header, .mask-bg-1, .mask-bg-2, .carousel-caption p, #myCarousel .list-group {
 		display: block;
+	}
+
+	.carousel-inner > .item > a > img {
+		/*width:400px;*/
+		height:550px;
 	}
 
 	.item img {

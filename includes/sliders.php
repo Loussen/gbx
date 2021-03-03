@@ -9,7 +9,7 @@
                 {
                     ?>
                     <div class="item <?=$j==1 ? 'active' : ''?>">
-                        <a href="<?=$row_sliders['url']?>" <?=$row_sliders['target']?>><img src="<?=SITE_PATH?>/images/sliders/<?=$row_sliders['image']?>">
+                        <a href="<?=strlen($row_sliders['url']) > 2 ? $row_sliders['url'] : 'javascript:void(0);'?>" <?=$row_sliders['target']?>><img src="<?=SITE_PATH?>/images/sliders/<?=$row_sliders['image']?>">
                             <div class="post-title">
                                 <?=decode_text($row_sliders['name_'.$lang_name])?>
                             </div>

@@ -81,13 +81,13 @@ if(isset($_POST["submit_insert_update"]) && check_csrf_(safe($_POST["csrf_"]),$d
 {
 	$datas_post=array('type','datetime','name','short_text','full_text','lang');
 	include "pages/__tools/check_post_datas.php";
-	$hour=explode(":",$hour);
+//	$hour=explode(":",$hour);
 	if(!isset($category_id)) $category_id=0;
 	if(!isset($flash)) $flash=0;
 	
 	if($datetime!=""){
 		$datetime=explode("/",$datetime);
-		$datetime=mktime($hour[0],$hour[1],date("s"),$datetime[1],$datetime[0],$datetime[2]);
+		$datetime=mktime(0,0,0,$datetime[1],$datetime[0],$datetime[2]);
 	}
 	else $datetime=$time;
 	

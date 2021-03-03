@@ -49,6 +49,15 @@
 				<input name="<?php echo decode_text($column_nm)?>" type="file" /> <?php echo $current_file?>
 			</div>
 		</div>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Ana səhifədə görsənməyi:</label>
+            <div class="col-md-10">
+                <div class="checkbox checkbox-inverse pull-left margin_0">
+                    <input type="checkbox" id="flash_check" value="1" onclick="chbx_(this.id)" name="flash" <?php if($information["flash"]>0) echo 'checked="checked"'; ?> /> <label for="flash_check"></label>
+                </div>
+            </div>
+        </div>
 		
 		<div class="form-group row hide">
 			<label for="example-text-input" class="col-md-2 col-form-label">İcon üçün kod:</label>

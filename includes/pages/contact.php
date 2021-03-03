@@ -17,23 +17,23 @@
 
             <div class="row cnt-det">
                 <div class="col-sm-12 col-md-7 mb-15">
-                    <div class="alert alert-success success_contact" style="display: none;"><?=$lang8?></div>
+                    <div class="alert alert-success success_contact" style="display: none;"><?=$lang48?></div>
                     <div class="alert alert-warning error_contact" style="display: none;"><?=$lang9?></div>
                     <form id="contact-form" class="form form-gbx" action="#">
                         <h4 class="contact-head">Bizə yazın!</h4>
                         <div class="row">
                             <div class="col-xs-6 col-md-6 form-group">
-                                <input class="form-control" id="name" name="name" placeholder="Ad, Soyad" type="text" autocomplete="off" />
+                                <input class="form-control" id="name" name="name" placeholder="<?=$lang35?>" type="text" autocomplete="off" />
                             </div>
                             <div class="col-xs-6 col-md-6 form-group">
-                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" autocomplete="off" />
+                                <input class="form-control" id="email" name="email" placeholder="<?=$lang36?>" type="email" autocomplete="off" />
                             </div>
                         </div>
-                        <textarea class="form-control" id="message" name="message" placeholder="Mesaj" rows="3" autocomplete="off" minlength="10"></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="<?=$lang37?>" rows="3" autocomplete="off" minlength="10"></textarea>
                         <br />
                         <div class="row">
                             <div class="col-xs-12 col-md-12">
-                                <button class="btn btn-more btn-sm" type="submit">Göndər</button>
+                                <button class="btn btn-more btn-sm" type="submit"><?=$lang47?></button>
                             </div>
                         </div>
                     </form>
@@ -43,6 +43,7 @@
                         <h4 class="contact-head">Əlaqə</h4>
                         <p><i aria-hidden="true" class="fa fa-phone"></i> <?=$info_contacts['phone']?><p>
                         <p><i aria-hidden="true" class="fa fa-phone"></i> <?=$info_contacts['phone2']?><p>
+                        <p><i aria-hidden="true" class="fa fa-mobile"></i> <?=$info_contacts['mobile']?><p>
                         <p><i aria-hidden="true" class="fa fa-map-marker"></i> <?=$info_contacts['text_'.$lang_name]?><p>
                         <p><i aria-hidden="true" class="fa fa-envelope"></i> <?=$info_contacts['email']?><p>
                         <p><i aria-hidden="true" class="fa fa-envelope"></i> <?=$info_contacts['email2']?><p>

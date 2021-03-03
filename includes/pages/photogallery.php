@@ -19,7 +19,7 @@
                 if($page<1) $page=1;
                 $start=$page*$limit-$limit;
 
-                $sql_gallery = mysqli_query($db,"SELECT id,name_".$lang_name." name,image,image_small FROM photo_albums_gallery WHERE active=1 AND album_id=".$id." ORDER BY position,id desc limit $start, $limit");
+                $sql_gallery = mysqli_query($db,"SELECT id,name_".$lang_name." name,image,image_small FROM photo_albums_gallery WHERE active=1 AND album_id=".$id." ORDER BY position,id asc limit $start, $limit");
 
                 while($row_gallery = mysqli_fetch_assoc($sql_gallery))
                 {

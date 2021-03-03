@@ -1,14 +1,14 @@
 <meta charset="utf-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<meta name="description" content="<?=$siteDescription?> - Gəncə Beynəlxalq Xəstəxanası"/>
-<meta name="keywords" content="<?=$siteKeywords?> - Gəncə Beynəlxalq Xəstəxanası"/>
-<meta name="og:title" content="<?=$siteTitle?> - Gəncə Beynəlxalq Xəstəxanası"/>
-<meta name="og:description" content="<?=$siteDescription?> - Gəncə Beynəlxalq Xəstəxanası"/>
-<meta name="og:keywords" content="<?=$siteKeywords?> - Gəncə Beynəlxalq Xəstəxanası"/>
+<meta name="description" content="<?=$siteDescription?> - <?=$lang46?>"/>
+<meta name="keywords" content="<?=$siteKeywords?> - <?=$lang46?>"/>
+<meta name="og:title" content="<?=$siteTitle?> - <?=$lang46?>"/>
+<meta name="og:description" content="<?=$siteDescription?> - <?=$lang46?>"/>
+<meta name="og:keywords" content="<?=$siteKeywords?> - <?=$lang46?>"/>
 <meta name="og:image" content="<?=$siteImage?>"/>
 <meta content="Fuad Hasanli | fhesenli92@gmail.com" name="author">
-<title><?=$siteTitle?></title>
+<title><?=$siteTitle?> - <?=$lang46?></title>
 
 <link href="<?=SITE_PATH?>/assets/css/bootstrap.css" rel="stylesheet">
 <link href="<?=SITE_PATH?>/assets/fonts/fonts.css" rel="stylesheet">

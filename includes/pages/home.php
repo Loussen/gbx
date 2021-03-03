@@ -5,7 +5,7 @@
     <div class="sitemap">
         <div class="row">
             <?php
-                $sql_home_menus = mysqli_query($db, "select * from menus where parent_id=0 and active=1 and link!='home' order by position");
+                $sql_home_menus = mysqli_query($db, "select * from menus where active=1 and link!='home' and flash=1 order by position");
 
                 while($row_home_menus=mysqli_fetch_assoc($sql_home_menus))
                 {
@@ -15,11 +15,11 @@
                             <div class="box-image"><img class="img-responsive" src="<?=SITE_PATH?>/images/menus/thumb_<?=$row_home_menus['image']?>"></div>
                             <h3><?=$row_home_menus['name_'.$lang_name]?></h3>
                             <?php
-                            $sql_home_sub_menus = mysqli_query($db, "select * from menus where parent_id='$row_home_menus[id]' and active=1 order by position");
+                            $sql_home_sub_menus = mysqli_query($db, "select * from menus where parent_id='$row_home_menus[id]' and active=1 and flash = 0 order by position limit 3");
 
                             $sub_home_menus_count = mysqli_num_rows($sql_home_sub_menus);
                             ?>
-                            <p><?=substr_(decode_text($row_home_menus['short_text_'.$lang_name]),0,$sub_home_menus_count > 0 ? 90 : 200,false,true)?></p>
+                            <p><?=substr_(decode_text($row_home_menus['short_text_'.$lang_name]),0,$sub_home_menus_count > 0 ? 300 : 300,false,true)?></p>
                             <ul>
                                 <?php
                                     if($sub_home_menus_count > 0)

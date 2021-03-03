@@ -9,7 +9,7 @@
             <div class="col-md-9">
                 <div class="marquee">
                     <?php
-                        $sql_flash = mysqli_query($db, "SELECT * FROM flash WHERE active = 1");
+                        $sql_flash = mysqli_query($db, "SELECT * FROM flash WHERE active = 1 order by position");
 
                         while($row_flash = mysqli_fetch_assoc($sql_flash))
                         {

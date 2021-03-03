@@ -96,6 +96,7 @@ $(document).ready(function () {
     });
 
     $("div.wrapper-1 img").addClass("img-responsive");
+    $("div.wrapper-1 iframe").css("width","100%");
     $("img.checkup_img").removeClass("img-responsive");
 });
 
